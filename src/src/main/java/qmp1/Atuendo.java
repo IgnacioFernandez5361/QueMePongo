@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 
 public class Atuendo {
     private Set<Prenda> prendas;
+    /*
+    * */
 
     public Atuendo(HashSet<Prenda> atuendo){
         this.prendas = atuendo;
@@ -24,3 +26,5 @@ public class Atuendo {
                 && catPrendas.contains("PARTE_INFERIOR");
     }
 }
+
+

@@ -7,6 +7,7 @@ import java.util.Set;
 public class QueMePongo {
     private Set<Atuendo> misAtuendos;
 
+/*Agrega un atuendo ya existente*/
     public void agregarAtuendo(Atuendo unAtuendo){
         if(unAtuendo.validarAtuendo()){
             misAtuendos.add(unAtuendo);
