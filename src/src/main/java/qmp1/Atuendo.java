@@ -1,6 +1,7 @@
 package qmp1;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -16,9 +17,9 @@ public class Atuendo {
     }
 
     public boolean validarAtuendo(){
-        Set<String> catPrendas = prendas.stream().map(x -> x.getCategoria()).collect(Collectors.toSet());
+        List<String> catPrendas = prendas.stream().map(x -> x.getCategoria()).collect(Collectors.toList());
 
-        return catPrendas.contains('CALZADO') && catPrendas.contains('PARTE_SUPERIOR')
-                && catPrendas.contains('PARTE_INFERIOR');
+        return catPrendas.contains("CALZADO") && catPrendas.contains("PARTE_SUPERIOR")
+                && catPrendas.contains("PARTE_INFERIOR");
     }
 }
