@@ -17,7 +17,8 @@ public class Atuendo {
     }
 
     public boolean validarAtuendo(){
-        List<String> catPrendas = prendas.stream().map(x -> x.getCategoria()).collect(Collectors.toList());
+        List<String> catPrendas = prendas.stream().map(unAtuendo -> unAtuendo.getCategoria())
+                .collect(Collectors.toList());
 
         return catPrendas.contains("CALZADO") && catPrendas.contains("PARTE_SUPERIOR")
                 && catPrendas.contains("PARTE_INFERIOR");

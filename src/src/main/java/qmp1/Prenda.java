@@ -8,21 +8,27 @@ public class Prenda {
     private CategoriaPrenda categoria;
 
     public String getCategoria(){
-        return categoria.toString();
+        return categoria.getCategoria();
     }
 
     public Prenda(String colorPrimario, String material, String tipoPrenda, CategoriaPrenda categoria){
-        this.categoria = categoria;
-        this.colorPrimario = colorPrimario;
-        this.material = material;
-        this.tipoPrenda = tipoPrenda;
+        if(categoria.reconoceTipo(tipoPrenda)){
+            this.categoria = categoria;
+            this.colorPrimario = colorPrimario;
+            this.material = material;
+            this.tipoPrenda = tipoPrenda;
+        }
+        else throw new RuntimeException("La categoria no se condice con su tipo");
     }
 
     public Prenda(String colorPrimario, String colorSecundario, String material, String tipoPrenda, CategoriaPrenda categoria){
-        this.categoria = categoria;
-        this.colorPrimario = colorPrimario;
-        this.colorSecundario = colorSecundario;
-        this.material = material;
-        this.tipoPrenda = tipoPrenda;
+        if(categoria.reconoceTipo(tipoPrenda)){
+            this.categoria = categoria;
+            this.colorPrimario = colorPrimario;
+            this.colorSecundario = colorSecundario;
+            this.material = material;
+            this.tipoPrenda = tipoPrenda;
+        }
+        else throw new RuntimeException("La categoria no se condice con su tipo");
     }
 }

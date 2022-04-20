@@ -1,4 +1,17 @@
 package qmp1;
 
-public enum CategoriaPrenda { PARTE_SUPERIOR, PARTE_INFERIOR, CALZADO, ACCESORIOS
+import java.util.Set;
+
+public abstract class CategoriaPrenda {
+    protected Set<String> tiposReconocidos;
+
+    public boolean reconoceTipo(String unTipo) {
+        return tiposReconocidos.contains(unTipo);
+    }
+
+    public abstract String getCategoria();
+
+    public void agregarReconocido(String nuevoTipo){
+        tiposReconocidos.add(nuevoTipo);
+    }
 }
