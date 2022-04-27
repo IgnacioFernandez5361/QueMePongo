@@ -1,5 +1,7 @@
 package qmp1.Prenda.Categorias;
 
+import qmp1.Prenda.TipoPrenda;
+
 import java.util.Set;
 
 public abstract class CategoriaPrenda {

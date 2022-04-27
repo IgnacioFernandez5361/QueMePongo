@@ -1,0 +1,5 @@
+package qmp1.Prenda;
+
+public enum TipoPrenda {
+    JEAN, CAMISA, REMERA_MANGA_CORTA, REMERA_MANGA_LARGA, GORRA, LENTAS, ZAPATOS, ZAPATILLAS, SHORT
+}
