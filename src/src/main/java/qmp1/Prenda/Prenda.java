@@ -13,6 +13,8 @@ public class Prenda {
         return this.categoria;
     }
 
+    /* Por las dudas lo dejo en comentario...
+
     public Prenda(Color colorPrimario, Material material, TipoPrenda tipoPrenda, Categoria categoria){
         if(tipoPrenda.coincideCategoria(categoria)){
             this.categoria = categoria;
@@ -34,6 +36,9 @@ public class Prenda {
 
         else throw new RuntimeException("La categoria no se condice con su tipo");
     }
+    */
+
+    /*Nuevos requerimientos*/
 
     /*Como usuarie de QuéMePongo, quiero crear una prenda especificando primero de qué tipo es.*/
 
@@ -47,15 +52,14 @@ public class Prenda {
      */
 
 
-
-
-
-
     public void agregarTrama(Trama trama) {
         if(tipoPrenda.tramaHabilitada(trama)){
             this.trama = trama;
         }
-        /*Caso contrario, a parte de no hacer nada lanza una excepccion*/
+
+        else{
+            throw new RuntimeException("Trama inconsistente con su tipo de prenda");
+        }
     }
 
     public void agregarMaterial(Material material) {
@@ -63,7 +67,9 @@ public class Prenda {
             this.material = material;
         }
 
-        /*Caso contrario, a parte de no hacer nada lanza una excepccion*/
+        else{
+            throw new RuntimeException("Material inconsistente con su tipo de prenda");
+        }
     }
 
     public void agregarColorPrimario(Color colorPrimario) {
@@ -71,7 +77,9 @@ public class Prenda {
             this.colorPrimario = colorPrimario;
         }
 
-        /*Caso contrario, a parte de no hacer nada lanza una excepccion*/
+        else{
+            throw new RuntimeException("Color inconsistente con su tipo de prenda");
+        }
     }
 
 
@@ -79,8 +87,22 @@ public class Prenda {
         if(tipoPrenda.colorHabilitado(colorSecundario)){
             this.colorSecundario = colorSecundario;
         }
+        else{
+            throw new RuntimeException("Color inconsistente con su tipo de prenda");
+        }
 
-        /*Caso contrario, a parte de no hacer nada lanza una excepccion*/
+
+    }
+
+    public void agregarCategoria(Categoria categoria) {
+        if(tipoPrenda.coincideCategoria(categoria)){
+            this.categoria = categoria;
+        }
+        else{
+            throw new RuntimeException("La categoria no coincide con su tipo");
+        }
+
+
     }
 
 

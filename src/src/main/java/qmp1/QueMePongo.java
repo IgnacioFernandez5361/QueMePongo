@@ -16,12 +16,25 @@ public class QueMePongo {
         borradorUltimaPrenda = new Prenda(tipoPrenda);
     }
 
+    void especificarCategoria(Categoria categoria){
+        if(borradorUltimaPrenda!= null) {
+            borradorUltimaPrenda.agregarCategoria(categoria);
+        }
+            else{
+                throw new RuntimeException("Prenda inexistente, primero crear prenda");
+            }
+
+
+    }
+
     void especificarColorPrimario(Color colorPrimario){
         if(borradorUltimaPrenda!= null){
             borradorUltimaPrenda.agregarColorPrimario(colorPrimario);
 
         }
-        /*Si no existe borradorUltimaPrenda, lanza una excepccion de primero crear prenda*/
+        else{
+            throw new RuntimeException("Prenda inexistente, primero crear prenda");
+        }
 
     }
 
@@ -30,7 +43,9 @@ public class QueMePongo {
             borradorUltimaPrenda.agregarMaterial( material);
 
         }
-        /*Si no existe borradorUltimaPrenda, lanza una excepccion*/
+        else{
+            throw new RuntimeException("Prenda inexistente, primero crear prenda");
+        }
     }
 
     void especificarTrama(Trama trama){
@@ -38,7 +53,9 @@ public class QueMePongo {
             borradorUltimaPrenda.agregarTrama(trama);
 
         }
-        /*Si no existe borradorUltimaPrenda, lanza una excepccion*/
+        else{
+            throw new RuntimeException("Prenda inexistente, primero crear prenda");
+        }
     }
 
     void especificarColorSecundario(Color colorSecundario){
@@ -46,7 +63,9 @@ public class QueMePongo {
             borradorUltimaPrenda.agregarColorSecundario(colorSecundario);
 
         }
-        /*Si no existe borradorUltimaPrenda, lanza una excepccion*/
+        else{
+            throw new RuntimeException("Prenda inexistente, primero crear prenda");
+        }
     }
 
 
