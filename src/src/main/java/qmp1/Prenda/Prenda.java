@@ -43,6 +43,7 @@ public class Prenda {
 
     /*Como usuarie de QuéMePongo, quiero crear una prenda especificando en segundo lugar los aspectos relacionados
     a su material (colores, material, trama, etc) para evitar elegir materiales inconsistentes con el tipo de prenda.
+
      */
 
     void especificarMateriales(Color colorPrimario, Material material, Trama trama){
