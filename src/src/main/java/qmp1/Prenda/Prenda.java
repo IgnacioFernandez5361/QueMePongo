@@ -46,27 +46,19 @@ public class Prenda {
 
      */
 
-    void especificarMateriales(Color colorPrimario, Material material, Trama trama){
-        this.agregarColor(colorPrimario);
-        this.agregarMaterial(material);
-        this.agregarTrama(trama);
 
-        /*Dudas:
-        * Como diseñar esto para Color secundario sabiendo que era opccional? (Podia o no estar)
-        * Tambien la categoria vendria a ser parte de los materiales? (En caso que si, podria usar
-        el metodo coincideCategoria en esta parte) Recordar que aun no estaria definida.
-        *
-        * */
-    }
 
-    private void agregarTrama(Trama trama) {
+
+
+
+    public void agregarTrama(Trama trama) {
         if(tipoPrenda.tramaHabilitada(trama)){
             this.trama = trama;
         }
         /*Caso contrario, a parte de no hacer nada lanza una excepccion*/
     }
 
-    private void agregarMaterial(Material material) {
+    public void agregarMaterial(Material material) {
         if(tipoPrenda.materialHabilitado(material)){
             this.material = material;
         }
@@ -74,13 +66,30 @@ public class Prenda {
         /*Caso contrario, a parte de no hacer nada lanza una excepccion*/
     }
 
-    private void agregarColor(Color colorPrimario) {
+    public void agregarColorPrimario(Color colorPrimario) {
         if(tipoPrenda.colorHabilitado(colorPrimario)){
             this.colorPrimario = colorPrimario;
         }
 
         /*Caso contrario, a parte de no hacer nada lanza una excepccion*/
     }
+
+
+    public void agregarColorSecundario(Color colorSecundario){
+        if(tipoPrenda.colorHabilitado(colorSecundario)){
+            this.colorSecundario = colorSecundario;
+        }
+
+        /*Caso contrario, a parte de no hacer nada lanza una excepccion*/
+    }
+
+
+    /*Dudas:
+
+        * Tambien la categoria vendria a ser parte de los materiales? (En caso que si, podria usar
+        el metodo coincideCategoria en esta parte) Recordar que aun no estaria definida.
+        *
+        * */
 
 
 }
