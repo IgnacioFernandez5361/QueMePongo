@@ -1,5 +1,14 @@
 package qmp1.Prenda;
 
-public enum TipoPrenda {
-    JEAN, CAMISA, REMERA_MANGA_CORTA, REMERA_MANGA_LARGA, GORRA, LENTAS, ZAPATOS, ZAPATILLAS, SHORT
+public class TipoPrenda {
+    Categoria categoria;
+
+    TipoPrenda(Categoria categoria){
+        this.categoria = categoria;
+    }
+
+    boolean coincideCategoria(Categoria unaCategoria){
+        return this.categoria == unaCategoria;
+    }
+
 }

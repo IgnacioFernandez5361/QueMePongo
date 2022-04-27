@@ -3,24 +3,20 @@ package qmp1.Prenda;
 import qmp1.Prenda.Categorias.CategoriaPrenda;
 
 
-
-import static qmp1.Prenda.Trama.LISA;
-
-
 public class Prenda {
     public Color colorPrimario;
     public Color colorSecundario;
     public Material material;
-    public String tipoPrenda;
-    public Trama trama = LISA;
-    public CategoriaPrenda categoria;
+    public TipoPrenda tipoPrenda;
+    public Trama trama;
+    public Categoria categoria;
 
-    public String getCategoria(){
-        return categoria.getCategoria();
+    public Categoria getCategoria(){
+        return this.categoria;
     }
 
-    public Prenda(Color colorPrimario, Material material, String tipoPrenda, CategoriaPrenda categoria){
-        if(categoria.reconoceTipo(tipoPrenda)){
+    public Prenda(Color colorPrimario, Material material, TipoPrenda tipoPrenda, Categoria categoria){
+        if(tipoPrenda.coincideCategoria(categoria)){
             this.categoria = categoria;
             this.colorPrimario = colorPrimario;
             this.material = material;
@@ -29,8 +25,8 @@ public class Prenda {
         else throw new RuntimeException("La categoria no se condice con su tipo");
     }
 
-    public Prenda(Color colorPrimario, Color colorSecundario, Material material, String tipoPrenda, CategoriaPrenda categoria){
-        if(categoria.reconoceTipo(tipoPrenda)){
+    public Prenda(Color colorPrimario, Color colorSecundario, Material material, TipoPrenda tipoPrenda, Categoria categoria){
+        if(tipoPrenda.coincideCategoria(categoria)){
             this.categoria = categoria;
             this.colorPrimario = colorPrimario;
             this.colorSecundario = colorSecundario;
@@ -43,7 +39,7 @@ public class Prenda {
 
     /*Como usuarie de QuéMePongo, quiero crear una prenda especificando primero de qué tipo es.*/
 
-    public Prenda(String tipoPrenda){
+    public Prenda(TipoPrenda tipoPrenda){
         this.tipoPrenda = tipoPrenda;
     }
 
