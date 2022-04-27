@@ -1,5 +1,6 @@
 package qmp1.Prenda.Categorias;
 
+import qmp1.Prenda.Categoria;
 import qmp1.Prenda.TipoPrenda;
 
 import java.util.Set;
@@ -11,7 +12,7 @@ public abstract class CategoriaPrenda {
         return tiposReconocidos.contains(unTipo);
     }
 
-    public abstract String getCategoria();
+    public abstract Categoria getCategoria();
 
     public void agregarReconocido(String nuevoTipo){
         tiposReconocidos.add(nuevoTipo);

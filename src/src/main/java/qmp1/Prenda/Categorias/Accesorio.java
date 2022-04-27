@@ -1,5 +1,7 @@
 package qmp1.Prenda.Categorias;
 
+import qmp1.Prenda.Categoria;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,7 +14,7 @@ public class Accesorio extends CategoriaPrenda{
         this.tiposReconocidos = tiposR;
     }
 
-    public String getCategoria() {
-        return "ACCESORIO";
+    public Categoria getCategoria() {
+        return Categoria.ACCESORIOS;
     }
 }
