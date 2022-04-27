@@ -8,6 +8,8 @@ import qmp1.Prenda.Prenda;
 
 public class Atuendo {
     private Set<Prenda> prendas;
+    /*
+    * */
 
     public Atuendo(HashSet<Prenda> atuendo){
         this.prendas = atuendo;
@@ -25,3 +27,5 @@ public class Atuendo {
                 && catPrendas.contains("PARTE_INFERIOR");
     }
 }
+
+
