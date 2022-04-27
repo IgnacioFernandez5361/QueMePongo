@@ -1,10 +1,13 @@
-package qmp1;
+package qmp1.Prenda;
+
+import qmp1.Prenda.Categorias.CategoriaPrenda;
 
 public class Prenda {
     private String colorPrimario;
     private String colorSecundario;
     private String material;
     private String tipoPrenda;
+    private Trama trama;
     private CategoriaPrenda categoria;
 
     public String getCategoria(){

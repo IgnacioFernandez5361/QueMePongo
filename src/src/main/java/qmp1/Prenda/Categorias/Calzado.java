@@ -1,4 +1,4 @@
-package qmp1;
+package qmp1.Prenda.Categorias;
 
 import java.util.HashSet;
 import java.util.Set;
