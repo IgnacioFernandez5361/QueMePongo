@@ -113,5 +113,9 @@ public class Prenda {
         *
         * */
 
-
+    // para validar 
+      public boolean esValido() {
+    	 return this.colorPrimario != null && this.material != null && this.tipoPrenda != null && this.categoria != null && this.categoria == tipoPrenda.categoria;
+    	
+    }
 }
