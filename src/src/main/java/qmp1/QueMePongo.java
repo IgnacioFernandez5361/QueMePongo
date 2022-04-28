@@ -11,6 +11,8 @@ public class QueMePongo {
     private Set<Prenda> misPrendas;
     Prenda borradorUltimaPrenda;
 
+
+
     /*Como usuarie de QuéMePongo, quiero guardar un borrador de la la última prenda que empecé a cargar para continuar después.
      */
     void crearPrenda(TipoPrenda tipoPrenda){
@@ -69,6 +71,14 @@ public class QueMePongo {
         }
     }
 
+    void guadarUnaPrenda(Atuendo atuendo){
+        borradorUltimaPrenda.guardarEnAtuendo(atuendo);
+    }
+
+
+
+
+
 
     /*¿debe tener algo como "especificarCategoria"?*/
 
@@ -78,5 +88,8 @@ public class QueMePongo {
             misAtuendos.add(unAtuendo);
         }
     }
+
+
+
 
 }

@@ -1,6 +1,8 @@
 package qmp1.Prenda;
 
 
+import qmp1.Atuendo;
+
 public class Prenda {
     public Color colorPrimario;
     public Color colorSecundario;
@@ -121,5 +123,21 @@ public class Prenda {
       public boolean esValido() {
     	 return this.colorPrimario != null && this.material != null && this.tipoPrenda != null && this.categoria != null && this.categoria == tipoPrenda.categoria;
     	
+    }
+
+    public void guardarEnAtuendo(Atuendo atuendo) {
+          if(this.esValido()){
+              this.completarDatosPorDefecto();
+              atuendo.agregarPrenda(this);
+          }
+          else{
+              throw new RuntimeException("La prenda es INVALIDA, no se puede guardar");
+          }
+    }
+
+    private void completarDatosPorDefecto() {
+          if(this.trama == null){
+              this.trama = Trama.LISA;
+          }
     }
 }

@@ -8,6 +8,8 @@ import qmp1.Prenda.Prenda;
 
 public class Atuendo {
     protected Set<Prenda> prendas;
+
+
     /*
     * */
 
