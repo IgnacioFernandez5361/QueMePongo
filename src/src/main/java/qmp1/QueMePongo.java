@@ -8,6 +8,7 @@ import java.util.Set;
 /*Comentario de prueba*/
 public class QueMePongo {
     private Set<Atuendo> misAtuendos;
+    private Set<Prenda> misPrendas;
     Prenda borradorUltimaPrenda;
 
     /*Como usuarie de QuéMePongo, quiero guardar un borrador de la la última prenda que empecé a cargar para continuar después.

@@ -6,7 +6,7 @@ public class Prenda {
     public Color colorSecundario;
     public Material material;
     public TipoPrenda tipoPrenda;
-    public Trama trama;
+    public Trama trama = Trama.LISA;
     public Categoria categoria;
 
     public Categoria getCategoria(){
@@ -60,6 +60,10 @@ public class Prenda {
         else{
             throw new RuntimeException("Trama inconsistente con su tipo de prenda");
         }
+    }
+
+    public void removerTrama(){
+        this.trama = null;
     }
 
     public void agregarMaterial(Material material) {

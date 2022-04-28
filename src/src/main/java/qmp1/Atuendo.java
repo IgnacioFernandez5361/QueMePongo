@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import qmp1.Prenda.Prenda;
 
 public class Atuendo {
-    private Set<Prenda> prendas;
+    protected Set<Prenda> prendas;
     /*
     * */
 
@@ -32,7 +32,7 @@ public class Atuendo {
  */
 
     public boolean validarAtuendo(){
-        List<String> catPrendas = prendas.stream().map(unAtuendo -> unAtuendo.getCategoria())
+        List<String> catPrendas = prendas.stream().map(unAtuendo -> unAtuendo.getCategoria().toString())
                 .collect(Collectors.toList());
 
         return catPrendas.contains("CALZADO") && catPrendas.contains("PARTE_SUPERIOR")
