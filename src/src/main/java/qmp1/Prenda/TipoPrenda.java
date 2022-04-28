@@ -17,14 +17,23 @@ public class TipoPrenda {
     }
 
     public boolean colorHabilitado(Color colorPrimario) {
-        return coloresPermitidos.contains(colorPrimario);
+        if(colorPrimario != null){
+            return coloresPermitidos.contains(colorPrimario);
+        }
+        else return false;
     }
 
     public boolean materialHabilitado(Material material) {
-        return materialesPermitidos.contains((material));
+        if(material != null){
+            return materialesPermitidos.contains((material));
+        }
+        else return false;
     }
 
     public boolean tramaHabilitada(Trama trama) {
-        return tramasPermitidas.contains(trama);
+        if(trama != null){
+            return tramasPermitidas.contains(trama);
+        }
+        else return false;
     }
 }
