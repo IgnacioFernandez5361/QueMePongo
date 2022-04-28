@@ -5,15 +5,15 @@ import qmp1.Prenda.Prenda;
 import java.util.HashSet;
 
 public class Uniforme extends Atuendo {
-  public Institucion institucion;
+  public String nombreInstitucion;
 
   public Uniforme(HashSet<Prenda> atuendo) {
     super(atuendo);
   }
 
-  public Uniforme(HashSet<Prenda> uniforme, Institucion institucion) {
+  public Uniforme(HashSet<Prenda> uniforme, String nombreInstitucion) {
     super(uniforme);
-    this.institucion = institucion;
+    this.nombreInstitucion = nombreInstitucion;
   }
 
   public boolean validarUniforme() {
