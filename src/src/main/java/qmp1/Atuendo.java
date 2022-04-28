@@ -8,7 +8,18 @@ import qmp1.Prenda.Prenda;
 
 public class Atuendo {
     protected Set<Prenda> prendas;
+/*
 
+Podriamos cambiar los atributos a los siguientes
+* Prenda parteSuperior
+* Prenda parteInferior
+* Prenda accesorios
+* Prenda calzado
+*
+* Asi procuramos que atuendo tenga unicamente una prenda por categoria
+*
+*
+* */
 
     /*
     * */

@@ -44,6 +44,8 @@ public class Prenda {
 
     /*Como usuarie de QuéMePongo, quiero crear una prenda especificando primero de qué tipo es.*/
 
+    /*Asi para que se instancio, si o si tenemos que pasarle unicamente el tipo de prenda primero, ni mas ni menos*/
+
     public Prenda(TipoPrenda tipoPrenda){
         this.tipoPrenda = tipoPrenda;
     }
@@ -112,14 +114,6 @@ public class Prenda {
     }
 
 
-    /*Dudas:
-
-        * Tambien la categoria vendria a ser parte de los materiales? (En caso que si, podria usar
-        el metodo coincideCategoria en esta parte) Recordar que aun no estaria definida.
-        *
-        * */
-
-    // para validar 
       public boolean esValido() {
     	 return this.colorPrimario != null && this.material != null && this.tipoPrenda != null && this.categoria != null && this.categoria == tipoPrenda.categoria;
     	

@@ -5,13 +5,13 @@ import qmp1.Prenda.Prenda;
 import java.util.HashSet;
 
 public class Uniforme extends Atuendo {
-  public String institucion;
+  public Institucion institucion;
 
   public Uniforme(HashSet<Prenda> atuendo) {
     super(atuendo);
   }
 
-  public Uniforme(HashSet<Prenda> uniforme, String institucion) {
+  public Uniforme(HashSet<Prenda> uniforme, Institucion institucion) {
     super(uniforme);
     this.institucion = institucion;
   }
