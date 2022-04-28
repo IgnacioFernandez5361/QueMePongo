@@ -8,7 +8,7 @@ public class Prenda {
     public Color colorSecundario;
     public Material material;
     public TipoPrenda tipoPrenda;
-    public Trama trama; /*Lo de que sea LISA por defecto ya lo hace completarDatosPorDefecto()*/
+    public Trama trama = Trama.LISA;
     public Categoria categoria;
 
     public Categoria getCategoria(){
@@ -17,18 +17,11 @@ public class Prenda {
 
     /*Nuevos requerimientos*/
 
-    /*Como usuarie de QuéMePongo, quiero crear una prenda especificando primero de qué tipo es.*/
-
     /*Asi para que se instancio, si o si tenemos que pasarle unicamente el tipo de prenda primero, ni mas ni menos*/
 
     public Prenda(TipoPrenda tipoPrenda){
         this.tipoPrenda = tipoPrenda;
     }
-
-    /*Como usuarie de QuéMePongo, quiero crear una prenda especificando en segundo lugar los aspectos relacionados
-    a su material (colores, material, trama, etc) para evitar elegir materiales inconsistentes con el tipo de prenda.
-
-     */
 
     /*Metodos para especificar caracteristicas de prenda*/
 
@@ -44,8 +37,8 @@ public class Prenda {
     }
 
     public void removerTrama(){
-        this.trama = null;
-    }
+        this.trama = Trama.LISA;
+    } //era null
 
     public void agregarMaterial(Material material) {
         if(tipoPrenda.materialHabilitado(material)){
@@ -95,7 +88,7 @@ public class Prenda {
 
     public void guardarEnAtuendo(Atuendo atuendo) {
           if(this.esValido()){
-              this.completarDatosPorDefecto();
+              //this.completarDatosPorDefecto();
               atuendo.agregarPrenda(this);
           }
           else{
@@ -108,9 +101,9 @@ public class Prenda {
 
     }
 
-    private void completarDatosPorDefecto() {
+/*    private void completarDatosPorDefecto() {
           if(this.trama == null){
               this.trama = Trama.LISA;
           }
-    }
+    }*/
 }
