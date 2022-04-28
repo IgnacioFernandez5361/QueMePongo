@@ -4,22 +4,19 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import qmp1.Prenda.Categoria;
 import qmp1.Prenda.Prenda;
 
 public class Atuendo {
     protected Set<Prenda> prendas;
 /*
+    Prenda parteSuperior;
+    Prenda parteInferior;
+    Prenda accesorios;
+    Prenda calzado;
+*/
 
-Podriamos cambiar los atributos a los siguientes
-* Prenda parteSuperior
-* Prenda parteInferior
-* Prenda accesorios
-* Prenda calzado
-*
-* Asi procuramos que atuendo tenga unicamente una prenda por categoria
-*
-*
-* */
 
     /*
     * */
@@ -31,6 +28,26 @@ Podriamos cambiar los atributos a los siguientes
     public void agregarPrenda(Prenda unaPrenda){
         prendas.add(unaPrenda);
     }
+
+
+/*
+    public void agregarPrenda(Prenda unaPrenda){
+        if(unaPrenda.categoria == Categoria.PARTE_SUPERIOR){
+            this.parteSuperior = unaPrenda;
+        }
+        if(unaPrenda.categoria == Categoria.PARTE_INFERIOR{
+            this.parteInferior = unaPrenda;
+        }
+        if(unaPrenda.categoria == Categoria.CALZADO){
+            this.calzado = unaPrenda;
+        }
+        if(unaPrenda.categoria == Categoria.ACCESORIOS){
+            this.accesorios = unaPrenda;
+        }
+        else{
+            throw new RuntimeException("Categoria inexistente");
+        }
+    }*/
     
     /*Como usuarie de QuéMePongo, quiero poder guardar una prenda solamente si esta es válida. 
  

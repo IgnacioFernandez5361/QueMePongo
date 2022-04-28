@@ -8,37 +8,12 @@ public class Prenda {
     public Color colorSecundario;
     public Material material;
     public TipoPrenda tipoPrenda;
-    public Trama trama = Trama.LISA;
+    public Trama trama; /*Lo de que sea LISA por defecto ya lo hace completarDatosPorDefecto()*/
     public Categoria categoria;
 
     public Categoria getCategoria(){
         return this.categoria;
     }
-
-    /* Por las dudas lo dejo en comentario...
-
-    public Prenda(Color colorPrimario, Material material, TipoPrenda tipoPrenda, Categoria categoria){
-        if(tipoPrenda.coincideCategoria(categoria)){
-            this.categoria = categoria;
-            this.colorPrimario = colorPrimario;
-            this.material = material;
-            this.tipoPrenda = tipoPrenda;
-        }
-        else throw new RuntimeException("La categoria no se condice con su tipo");
-    }
-
-    public Prenda(Color colorPrimario, Color colorSecundario, Material material, TipoPrenda tipoPrenda, Categoria categoria){
-        if(tipoPrenda.coincideCategoria(categoria)){
-            this.categoria = categoria;
-            this.colorPrimario = colorPrimario;
-            this.colorSecundario = colorSecundario;
-            this.material = material;
-            this.tipoPrenda = tipoPrenda;
-        }
-
-        else throw new RuntimeException("La categoria no se condice con su tipo");
-    }
-    */
 
     /*Nuevos requerimientos*/
 
@@ -54,6 +29,8 @@ public class Prenda {
     a su material (colores, material, trama, etc) para evitar elegir materiales inconsistentes con el tipo de prenda.
 
      */
+
+    /*Metodos para especificar caracteristicas de prenda*/
 
 
     public void agregarTrama(Trama trama) {
@@ -114,10 +91,7 @@ public class Prenda {
     }
 
 
-      public boolean esValido() {
-    	 return this.colorPrimario != null && this.material != null && this.tipoPrenda != null && this.categoria != null && this.categoria == tipoPrenda.categoria;
-    	
-    }
+    /*Para guardar una prenda en un atuendo*/
 
     public void guardarEnAtuendo(Atuendo atuendo) {
           if(this.esValido()){
@@ -127,6 +101,11 @@ public class Prenda {
           else{
               throw new RuntimeException("La prenda es INVALIDA, no se puede guardar");
           }
+    }
+
+    public boolean esValido() {
+        return this.colorPrimario != null && this.material != null && this.tipoPrenda != null && this.categoria != null;
+
     }
 
     private void completarDatosPorDefecto() {
