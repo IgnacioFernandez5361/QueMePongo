@@ -26,9 +26,11 @@ public class Atuendo {
     }
 
     public void agregarPrenda(Prenda unaPrenda){
+    	if( unaPrenda.prendaValida()) {
         prendas.add(unaPrenda);
+    	}
     }
-
+   
 
 /*
     public void agregarPrenda(Prenda unaPrenda){

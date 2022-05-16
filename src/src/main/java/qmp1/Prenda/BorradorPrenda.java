@@ -7,7 +7,7 @@ public class BorradorPrenda {
     public Color colorPrimario;
     public Color colorSecundario;
     public Material material;
-    public Trama trama;
+    public Trama trama= Trama.LISA;
     public Categoria categoria;
 
 
@@ -25,9 +25,6 @@ public class BorradorPrenda {
         }
     }
 
-    public void removerTrama(){
-        this.trama = Trama.LISA;
-    } //era null
 
     public void agregarMaterial(Material material) {
         if(tipoPrenda.materialHabilitado(material)){
