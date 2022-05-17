@@ -3,39 +3,33 @@ package qmp1.Prenda;
 
 import java.util.Set;
 
-import qmp1.Atuendo;
-
 public class Prenda {
     public Color colorPrimario;
     public Color colorSecundario;
     public Material material;
     public TipoPrenda tipoPrenda;
     public Trama trama = Trama.LISA;
-    public Categoria categoria;
     public int cantVecesUsado;
     public Estado estado;
-    
-    public Categoria getCategoria(){
-        return this.categoria;
-    }
 
-    public Prenda(Color colorPrimario, Material material, TipoPrenda tipoPrenda, Categoria categoria, Trama trama){
-            this.categoria = categoria;
+
+    public Prenda(Color colorPrimario, Material material, TipoPrenda tipoPrenda, Trama trama){
             this.colorPrimario = colorPrimario;
             this.material = material;
             this.tipoPrenda = tipoPrenda;
             this.trama = trama;
     }
 
-    public Prenda(Color colorPrimario, Color colorSecundario, Material material, TipoPrenda tipoPrenda,
-                  Categoria categoria, Trama trama){
-        this.categoria = categoria;
+    public Prenda(Color colorPrimario, Color colorSecundario, Material material, TipoPrenda tipoPrenda, Trama trama){
         this.colorPrimario = colorPrimario;
         this.colorSecundario = colorSecundario;
         this.material = material;
         this.tipoPrenda = tipoPrenda;
         this.trama = trama;
     }
+
+
+
     
     public boolean prendaValida() {
     	return false;

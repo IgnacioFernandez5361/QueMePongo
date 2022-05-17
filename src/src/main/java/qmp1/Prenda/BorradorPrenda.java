@@ -3,12 +3,12 @@ package qmp1.Prenda;
 import qmp1.Atuendo;
 
 public class BorradorPrenda {
-    private  TipoPrenda tipoPrenda;
+
+    public final TipoPrenda tipoPrenda;
     public Color colorPrimario;
     public Color colorSecundario;
     public Material material;
     public Trama trama= Trama.LISA;
-    public Categoria categoria;
 
 
     public BorradorPrenda(TipoPrenda tipoPrenda){
@@ -56,27 +56,18 @@ public class BorradorPrenda {
         }
     }
 
-    public void agregarCategoria(Categoria categoria) {
-        if(tipoPrenda.coincideCategoria(categoria)){
-            this.categoria = categoria;
-        }
-        else {
-            throw new RuntimeException("La categoria no coincide con su tipo");
-        }
-    }
-
     public Prenda generarPrenda(){
         if(esValido()){
             if(colorSecundario != null) return new Prenda(colorPrimario,colorSecundario,material,
-                    tipoPrenda,categoria,trama);
-            else return new Prenda(colorPrimario,material,tipoPrenda,categoria,trama);
+                    tipoPrenda,trama);
+            else return new Prenda(colorPrimario,material,tipoPrenda,trama);
         }
         else throw new RuntimeException("Hay valores necesarios para generar una prenda no inicializados");
     }
 
     private boolean esValido() {
         return this.colorPrimario != null && this.material != null &&
-                this.tipoPrenda != null && this.categoria != null;
+                this.tipoPrenda != null;
     }
 
     /*private void completarDatosPorDefecto() {
