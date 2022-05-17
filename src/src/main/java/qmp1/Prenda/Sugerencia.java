@@ -11,7 +11,15 @@ public class Sugerencia {
 	Prenda sugerenciaPies;
 	Prenda sugerenciaAccesorio;
 	
-	//accesorio no sabria como hacerlo opcional
+	//sugerencia deberia tener de forma obligatoria torso, piernas y pies, y de forma opccional accesorios
+
+	//Constructor sin accesorio
+	Sugerencia(Prenda torso, Prenda piernas, Prenda pies){
+		sugerenciaTorso = torso;
+		sugernciaPiernas = piernas;
+		sugerenciaPies = pies;
+	}
+	//Constructo con accesorio
 	Sugerencia(Prenda torso, Prenda piernas, Prenda pies ,Prenda accesorio){
 		sugerenciaTorso = torso;
 		sugernciaPiernas = piernas;
