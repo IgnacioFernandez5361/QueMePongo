@@ -12,10 +12,6 @@ public class TipoPrenda {
         this.categoria = categoria;
     }
 
-    boolean coincideCategoria(Categoria unaCategoria){
-        return this.categoria == unaCategoria;
-    }
-
     public boolean colorHabilitado(Color colorPrimario) {
         if(colorPrimario != null){
             return coloresPermitidos.contains(colorPrimario);

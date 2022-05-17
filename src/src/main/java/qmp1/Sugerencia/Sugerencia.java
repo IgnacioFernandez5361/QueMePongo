@@ -1,4 +1,6 @@
-package qmp1.Prenda;
+package qmp1.Sugerencia;
+
+import qmp1.Prenda.Prenda;
 
 import java.util.Set;
 

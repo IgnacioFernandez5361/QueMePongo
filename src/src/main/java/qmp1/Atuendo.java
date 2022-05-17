@@ -19,18 +19,18 @@ public class Atuendo {
 
 
     /*
-    * */
+     * */
 
-    public Atuendo(HashSet<Prenda> atuendo){
+    public Atuendo(HashSet<Prenda> atuendo) {
         this.prendas = atuendo;
     }
 
-    public void agregarPrenda(Prenda unaPrenda){
-    	if( unaPrenda.prendaValida()) {
-        prendas.add(unaPrenda);
-    	}
+    public void agregarPrenda(Prenda unaPrenda) {
+        if (unaPrenda.prendaValida()) {
+            prendas.add(unaPrenda);
+        }
     }
-   
+}
 
 /*
     public void agregarPrenda(Prenda unaPrenda){
@@ -62,7 +62,7 @@ public class Atuendo {
         
     }
  */
-
+/*
     public boolean validarAtuendo(){
         List<String> catPrendas = prendas.stream().map(unAtuendo -> unAtuendo.getCategoria().toString())
                 .collect(Collectors.toList());
@@ -71,5 +71,5 @@ public class Atuendo {
                 && catPrendas.contains("PARTE_INFERIOR");
     }
 }
-
+*/
 
