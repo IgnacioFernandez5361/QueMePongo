@@ -34,14 +34,12 @@ public class Prenda {
     public void actualizarEstadoPrenda() {
     	if(cantVecesUsado == 0){
     		estado = Estado.USADA;
-        cantVecesUsado++;
     	} else if(cantVecesUsado == 1) {
     		estado = Estado.SUCIA;
-        cantVecesUsado++;
     	} else if(cantVecesUsado == 4) {
     		estado = Estado.PERCUDIDA;
-        cantVecesUsado++;
     	}
+      cantVecesUsado++;
     }
 
     public void prendaLavandose() {
@@ -53,6 +51,7 @@ public class Prenda {
     public void terminarLavado(){
       if(estado == Estado.LAVANDOSE){
         estado = Estado.LIMPIA;
+        cantVecesUsado = 0;
       }
     }
 }
