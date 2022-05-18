@@ -39,13 +39,7 @@ public class Guardarropas {
         Sugerencia nuevaSugerencia = new Sugerencia(torso, piernas, pies);
       } else {
         Sugerencia nuevaSugerencia = new Sugerencia(torso, piernas, pies, accesorios);
-        accesorios.actualizarEstadoPrenda();
-      }
-
-      // Con la sugerencia ya creada, actualizo el estado de cada prenda.
-      torso.actualizarEstadoPrenda();
-      piernas.actualizarEstadoPrenda();
-      pies.actualizarEstadoPrenda();
+      } //La actualizacion de estado la realiza Sugerencia en el constructor
 
     } else {
       // Y si no es posible, lanzo excepción.

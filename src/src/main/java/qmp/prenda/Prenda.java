@@ -37,18 +37,23 @@ public class Prenda {
     return true;
   }
 
-  public void actualizarEstadoPrenda() {
-    if (cantVecesUsado == 0) {
-      estado = Estado.USADA;
-    } else if (cantVecesUsado == 1) {
-      estado = Estado.SUCIA;
-    } else if (cantVecesUsado == 4) {
-      estado = Estado.PERCUDIDA;
-    }
+//Se suma 1, de corresponder, actualiza el estado de prenda
+  public void seUsa() {
     cantVecesUsado++;
+    this.actualizarEstadoPrenda();
   }
 
-  public void prendaLavandose() {
+  public void actualizarEstadoPrenda() {
+    if (cantVecesUsado == 1) {
+      estado = Estado.USADA;
+    } else if (cantVecesUsado == 2) {
+      estado = Estado.SUCIA;
+    } else if (cantVecesUsado == 5) {
+      estado = Estado.PERCUDIDA;
+    }
+  }
+
+  public void empezarLavado() {
     if (estado == Estado.SUCIA) {
       estado = Estado.LAVANDOSE;
     }
@@ -60,4 +65,5 @@ public class Prenda {
       cantVecesUsado = 0;
     }
   }
+
 }
