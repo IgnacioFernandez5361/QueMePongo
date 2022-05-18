@@ -14,42 +14,40 @@ public class BorradorPrenda {
     }
 
     public void agregarTrama(Trama trama) {
-        if(tipoPrenda.tramaHabilitada(trama)){
-            this.trama = trama;
-        }
+        this.validarTrama(trama);
+        this.trama = trama;
+    }
 
-        else{
+    public void agregarMaterial(Material material) {
+        this.validarMaterial(material);
+        this.material = material;
+    }
+
+    public void agregarColorPrimario(Color colorPrimario) {
+        this.validarColor(colorPrimario);
+        this.colorPrimario = colorPrimario;
+    }
+
+    public void agregarColorSecundario(Color colorSecundario){
+        this.validarColor(colorSecundario);
+        this.colorSecundario = colorSecundario;
+    }
+
+//VALIDACIONES
+    private void validarTrama(Trama trama) {
+        if(!tipoPrenda.tramaHabilitada(trama)){
             throw new RuntimeException("Trama inconsistente con su tipo de prenda");
         }
     }
 
-
-    public void agregarMaterial(Material material) {
-        if(tipoPrenda.materialHabilitado(material)){
-            this.material = material;
-        }
-
-        else{
+    private void validarMaterial(Material material) {
+        if(!tipoPrenda.materialHabilitado(material)){
             throw new RuntimeException("Material inconsistente con su tipo de prenda");
         }
     }
 
-    public void agregarColorPrimario(Color colorPrimario) {
-        if(tipoPrenda.colorHabilitado(colorPrimario)){
-            this.colorPrimario = colorPrimario;
-        }
-
-        else{
-            throw new RuntimeException("Color inconsistente con su tipo de prenda");
-        }
-    }
-
-
-    public void agregarColorSecundario(Color colorSecundario){
-        if(tipoPrenda.colorHabilitado(colorSecundario)){
-            this.colorSecundario = colorSecundario;
-        }
-        else{
+    private void validarColor(Color colorPrimario) {
+        if(!tipoPrenda.colorHabilitado(colorPrimario)){
             throw new RuntimeException("Color inconsistente con su tipo de prenda");
         }
     }
