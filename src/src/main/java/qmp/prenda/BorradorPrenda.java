@@ -14,39 +14,39 @@ public class BorradorPrenda {
     }
 
     public void agregarTrama(Trama trama) {
-        this.validarTrama(trama);
+        this.validarTramaConTipo(trama);
         this.trama = trama;
     }
 
     public void agregarMaterial(Material material) {
-        this.validarMaterial(material);
+        this.validarMaterialConTipo(material);
         this.material = material;
     }
 
     public void agregarColorPrimario(Color colorPrimario) {
-        this.validarColor(colorPrimario);
+        this.validarColorConTipo(colorPrimario);
         this.colorPrimario = colorPrimario;
     }
 
     public void agregarColorSecundario(Color colorSecundario){
-        this.validarColor(colorSecundario);
+        this.validarColorConTipo(colorSecundario);
         this.colorSecundario = colorSecundario;
     }
 
 //VALIDACIONES
-    private void validarTrama(Trama trama) {
+    private void validarTramaConTipo(Trama trama) {
         if(!tipoPrenda.tramaHabilitada(trama)){
             throw new RuntimeException("Trama inconsistente con su tipo de prenda");
         }
     }
 
-    private void validarMaterial(Material material) {
+    private void validarMaterialConTipo(Material material) {
         if(!tipoPrenda.materialHabilitado(material)){
             throw new RuntimeException("Material inconsistente con su tipo de prenda");
         }
     }
 
-    private void validarColor(Color colorPrimario) {
+    private void validarColorConTipo(Color colorPrimario) {
         if(!tipoPrenda.colorHabilitado(colorPrimario)){
             throw new RuntimeException("Color inconsistente con su tipo de prenda");
         }
