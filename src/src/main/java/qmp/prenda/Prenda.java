@@ -24,6 +24,10 @@ public class Prenda {
         this.trama = trama;
     }
 
+    public TipoPrenda getTipo(){
+      return this.tipoPrenda;
+    }
+
     public boolean sePuedeSugerir() {
     	if(estado == Estado.LAVANDOSE || estado == Estado.PERCUDIDA){
         return false;
