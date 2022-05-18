@@ -30,14 +30,22 @@ public class Prenda {
     return this.tipoPrenda;
   }
 
+/////
+
   public boolean sePuedeSugerir() {
-    if (estado == Estado.LAVANDOSE || estado == Estado.PERCUDIDA) {
-      return false;
-    }
-    return true;
+    return !this.estaLavandose() && !this.estaPercudida();
   }
 
-//Se suma 1, de corresponder, actualiza el estado de prenda
+  private boolean estaPercudida() {
+    return estado == Estado.PERCUDIDA;
+  }
+
+  private boolean estaLavandose() {
+    return estado == Estado.LAVANDOSE;
+  }
+
+
+  //Se suma 1, de corresponder, actualiza el estado de prenda
   public void seUsa() {
     cantVecesUsado++;
     this.actualizarEstadoPrenda();
