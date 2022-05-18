@@ -1,6 +1,4 @@
-package qmp1.Prenda;
-
-import qmp1.Atuendo;
+package qmp.prenda;
 
 public class BorradorPrenda {
 

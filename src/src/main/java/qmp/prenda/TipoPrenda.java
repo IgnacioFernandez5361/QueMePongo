@@ -1,15 +1,19 @@
-package qmp1.Prenda;
+package qmp.prenda;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public class TipoPrenda {
-    Categoria categoria;
-    LinkedList<Color> coloresPermitidos;
-    LinkedList<Material> materialesPermitidos;
-    LinkedList<Trama> tramasPermitidas;
+    private Categoria categoria;
+    private List<Color> coloresPermitidos;
+    private List<Material> materialesPermitidos;
+    private List<Trama> tramasPermitidas;
 
     public TipoPrenda(Categoria categoria){
         this.categoria = categoria;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
     }
 
     public boolean colorHabilitado(Color colorPrimario) {
