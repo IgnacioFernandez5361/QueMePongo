@@ -1,6 +1,6 @@
-package qmp1.Uniforme;
+package qmp.uniforme;
 
-import qmp1.Prenda.Prenda;
+import qmp.prenda.Prenda;
 
 abstract class FabricanteUniformes {
 /*FALTA*/

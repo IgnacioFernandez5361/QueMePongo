@@ -1,4 +1,4 @@
-package qmp1.Prenda;
+package qmp.prenda;
 
 public enum Material {
     ALGODON, LYCRA, POLIESTER
