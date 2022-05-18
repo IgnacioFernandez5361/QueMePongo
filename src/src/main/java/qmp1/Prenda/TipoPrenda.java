@@ -8,7 +8,7 @@ public class TipoPrenda {
     LinkedList<Material> materialesPermitidos;
     LinkedList<Trama> tramasPermitidas;
 
-    TipoPrenda(Categoria categoria){
+    public TipoPrenda(Categoria categoria){
         this.categoria = categoria;
     }
 
@@ -32,4 +32,7 @@ public class TipoPrenda {
         }
         else return false;
     }
+
+
 }
+
