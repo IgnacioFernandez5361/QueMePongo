@@ -5,7 +5,7 @@ public class Prenda {
     private Color colorSecundario;
     private Material material;
     private TipoPrenda tipoPrenda;
-    private Trama trama = Trama.LISA;
+    private Trama trama;
     private int cantVecesUsado = 0;
     private Estado estado = Estado.LIMPIA;
 

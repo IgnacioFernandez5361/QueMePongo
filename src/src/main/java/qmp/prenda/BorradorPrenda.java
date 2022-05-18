@@ -6,7 +6,7 @@ public class BorradorPrenda {
     public Color colorPrimario;
     public Color colorSecundario;
     public Material material;
-    public Trama trama= Trama.LISA;
+    public Trama trama;
 
 
     public BorradorPrenda(TipoPrenda tipoPrenda){
@@ -56,6 +56,7 @@ public class BorradorPrenda {
 
     public Prenda generarPrenda(){
         if(esValido()){
+            this.completarTramaPorDefecto();
             if(colorSecundario != null) return new Prenda(colorPrimario,colorSecundario,material,
                     tipoPrenda,trama);
             else return new Prenda(colorPrimario,material,tipoPrenda,trama);
@@ -68,9 +69,9 @@ public class BorradorPrenda {
                 this.tipoPrenda != null;
     }
 
-    /*private void completarDatosPorDefecto() {
+    private void completarTramaPorDefecto() {
         if(this.trama == null){
             this.trama = Trama.LISA;
         }
-    }*/
+    }
 }
