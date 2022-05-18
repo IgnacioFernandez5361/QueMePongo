@@ -25,6 +25,7 @@ public class Guardarropas {
     return null;
   }
 
+/*
   public void darSugerencia() {
 
     // Busco una prenda válida de cada tipo para armar la sugerencia
@@ -46,4 +47,6 @@ public class Guardarropas {
       throw new RuntimeException("Faltan prendas de alguna categoría en el guardarropas");
     }
   }
+
+ */
 }
