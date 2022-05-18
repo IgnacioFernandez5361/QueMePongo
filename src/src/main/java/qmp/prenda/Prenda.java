@@ -1,5 +1,7 @@
 package qmp.prenda;
 
+import static java.util.Objects.requireNonNull;
+
 public class Prenda {
   private Color colorPrimario;
   private Color colorSecundario;
@@ -10,16 +12,16 @@ public class Prenda {
   private Estado estado = Estado.LIMPIA;
 
   public Prenda(Color colorPrimario, Material material, TipoPrenda tipoPrenda, Trama trama) {
-    this.colorPrimario = colorPrimario;
-    this.material = material;
+    this.colorPrimario = requireNonNull(colorPrimario, "Dato color primario es obligatorio");
+    this.material = requireNonNull(material, "Dato material es obligatorio");
     this.tipoPrenda = tipoPrenda;
     this.trama = trama;
   }
-
+/*atributo TipoPrenda nunca sera null, dado que BorradorPrenda la inicializa siempre*/
   public Prenda(Color colorPrimario, Color colorSecundario, Material material, TipoPrenda tipoPrenda, Trama trama) {
-    this.colorPrimario = colorPrimario;
+    this.colorPrimario = requireNonNull(colorPrimario, "Dato color primario es obligatorio");
     this.colorSecundario = colorSecundario;
-    this.material = material;
+    this.material = requireNonNull(material, "Dato material es obligatorio");
     this.tipoPrenda = tipoPrenda;
     this.trama = trama;
   }

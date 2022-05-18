@@ -53,7 +53,7 @@ public class BorradorPrenda {
             throw new RuntimeException("Color inconsistente con su tipo de prenda");
         }
     }
-
+/*
     public Prenda generarPrenda(){
         if(esValido()){
             this.completarTramaPorDefecto();
@@ -68,7 +68,19 @@ public class BorradorPrenda {
         return this.colorPrimario != null && this.material != null &&
                 this.tipoPrenda != null;
     }
+*/
 
+public Prenda generarPrenda(){
+    /*la validacion de datos ya lo haria el Constructor Prenda en clase Prenda */
+    this.completarTramaPorDefecto();
+
+    if(colorSecundario != null)
+        return new Prenda(colorPrimario,colorSecundario,material,tipoPrenda,trama);
+    else
+        return new Prenda(colorPrimario,material,tipoPrenda,trama);
+
+
+}
     private void completarTramaPorDefecto() {
         if(this.trama == null){
             this.trama = Trama.LISA;
