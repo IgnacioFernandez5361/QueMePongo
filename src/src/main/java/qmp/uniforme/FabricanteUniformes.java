@@ -106,20 +106,3 @@ En este caso que deberia hacer?
 
  */
 
-/*
-class SanJuan extends FabricanteUniformes{
-
-    Prenda fabricarParteSuperior();
-    Prenda fabricarParteInferior();
-    Prenda fabricarCalzado();
-}
-
-
-class InstitutoJonson extends FabricanteUniformes{
-    Prenda fabricarParteSuperior();
-    Prenda fabricarParteInferior();
-    Prenda fabricarCalzado();
-
-
-}
-*/
