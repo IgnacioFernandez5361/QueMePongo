@@ -1,5 +1,9 @@
 package qmp.prenda;
 
+import qmp.excepcciones.ColorIncompatibleConTipoException;
+import qmp.excepcciones.MaterialIncompatibleConTipo;
+import qmp.excepcciones.TramaIncompatibleConTipoException;
+
 public class BorradorPrenda {
 
     public final TipoPrenda tipoPrenda;
@@ -36,37 +40,21 @@ public class BorradorPrenda {
 //VALIDACIONES
     private void validarTramaConTipo(Trama trama) {
         if(!tipoPrenda.tramaHabilitada(trama)){
-            throw new RuntimeException("Trama inconsistente con su tipo de prenda");
+            throw new TramaIncompatibleConTipoException("Trama inconsistente con su tipo de prenda");
         }
     }
 
     private void validarMaterialConTipo(Material material) {
         if(!tipoPrenda.materialHabilitado(material)){
-            throw new RuntimeException("Material inconsistente con su tipo de prenda");
+            throw new MaterialIncompatibleConTipo("Material inconsistente con su tipo de prenda");
         }
     }
 
     private void validarColorConTipo(Color colorPrimario) {
         if(!tipoPrenda.colorHabilitado(colorPrimario)){
-            throw new RuntimeException("Color inconsistente con su tipo de prenda");
+            throw new ColorIncompatibleConTipoException("Color inconsistente con su tipo de prenda");
         }
     }
-/*
-    public Prenda generarPrenda(){
-        if(esValido()){
-            this.completarTramaPorDefecto();
-            if(colorSecundario != null) return new Prenda(colorPrimario,colorSecundario,material,
-                    tipoPrenda,trama);
-            else return new Prenda(colorPrimario,material,tipoPrenda,trama);
-        }
-        else throw new RuntimeException("Hay valores necesarios para generar una prenda no inicializados");
-    }
-
-    private boolean esValido() {
-        return this.colorPrimario != null && this.material != null &&
-                this.tipoPrenda != null;
-    }
-*/
 
 public Prenda generarPrenda(){
     /*la validacion de datos ya lo haria el Constructor Prenda en clase Prenda */

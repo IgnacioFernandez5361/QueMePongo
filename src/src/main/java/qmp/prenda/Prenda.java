@@ -3,11 +3,11 @@ package qmp.prenda;
 import static java.util.Objects.requireNonNull;
 
 public class Prenda {
-  private Color colorPrimario;
+  private final Color colorPrimario;
   private Color colorSecundario;
-  private Material material;
-  private TipoPrenda tipoPrenda;
-  private Trama trama;
+  private final Material material;
+  private final TipoPrenda tipoPrenda;
+  private final Trama trama;
   private int cantVecesUsado = 0;
   private Estado estado = Estado.LIMPIA;
 
