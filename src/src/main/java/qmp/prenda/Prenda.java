@@ -73,5 +73,8 @@ public class Prenda {
       cantVecesUsado = 0;
     }
   }
-
+//PARA TESTS
+  public int getCantVecesUsado() {
+    return cantVecesUsado;
+  }
 }

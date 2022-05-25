@@ -37,4 +37,22 @@ public class Sugerencia {
     	return sugerenciaTorso == prenda || sugerenciaPiernas == prenda ||
 					sugerenciaPies == prenda || sugerenciaAccesorio == prenda ;
     }
+
+	//para tests
+	public Prenda getSugerenciaTorso(){
+		return sugerenciaTorso;
+	}
+
+	public Prenda getSugerenciaPies(){
+		return sugerenciaPies;
+	}
+
+	public Prenda getSugerenciaPiernas(){
+		return sugerenciaPiernas;
+	}
+
+	public Prenda getSugerenciaAccesorio(){
+		return sugerenciaAccesorio;
+	}
+
 }

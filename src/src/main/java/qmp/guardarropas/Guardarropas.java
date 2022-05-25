@@ -25,6 +25,14 @@ public class Guardarropas {
     return null;
   }
 
+  public Guardarropas(List<Prenda> prendas){
+    this.misPrendas = prendas;
+  }
+  //Para tests
+  void setMisPrendas(List<Prenda> prendas ){
+    this.misPrendas = prendas;
+  }
+
 /*
   public void darSugerencia() {
 
