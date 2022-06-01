@@ -2,12 +2,6 @@ package qmp.guardarropas;
 
 import qmp.prenda.Prenda;
 
-import java.util.List;
-import java.util.Map;
-
-import java.time.*;
-import qmp.AccuWeatherAPI;
-import qmp.excepcciones.MaterialIncompatibleConTipo;
 import qmp.excepcciones.PrendaNoAptaConElClimaActualException;
 
 public class Sugerencia {
@@ -17,17 +11,16 @@ public class Sugerencia {
 	Prenda sugerenciaAccesorio;
 
 	public Sugerencia(Prenda torso, Prenda piernas, Prenda pies){
-		if( torso.coincideClima()  && piernas.coincideClima() && pies.coincideClima()) {
+		if( torso.coincideClima()  && piernas.coincideClima() && pies.coincideClima() ) {
 			sugerenciaTorso = torso;
 			sugerenciaPiernas = piernas;
 			sugerenciaPies = pies;
-			usarPrendas(); //Cuando crea la sugerencia envia mensaje a Prenda que fue usada
+			usarPrendas();
 			}else {
 				 throw new PrendaNoAptaConElClimaActualException("Las prendas no son acordes con el clima actual");
 			}
 
 	}
-	
 	//Constructo con accesorio
 	public Sugerencia(Prenda torso, Prenda piernas, Prenda pies ,Prenda accesorio){
 		if( torso.coincideClima()  && piernas.coincideClima() && pies.coincideClima() && accesorio.coincideClima()) {
@@ -39,6 +32,7 @@ public class Sugerencia {
 		}else {
 			 throw new PrendaNoAptaConElClimaActualException("Las prendas no son acordes con el clima actual");
 		}
+		
 	}
 	
 	
@@ -73,15 +67,6 @@ public class Sugerencia {
 	public Prenda getSugerenciaAccesorio(){
 		return sugerenciaAccesorio;
 	}
-	
-	/*Como usuarie de QuéMePongo, quiero poder conocer las condiciones climáticas 
-	  de Buenos Aires en un momento dado para obtener sugerencias acordes.
-*/
-	AccuWeatherAPI apiClima = new AccuWeatherAPI();
-	
-	List< Map<String, Object> > condicionesClimaticas = apiClima.getWeather("Buenos Aires, Argentina");  
-	
-	// hay que filtar por fecha
 	
 	
 	

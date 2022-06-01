@@ -2,6 +2,11 @@ package qmp.prenda;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.List;
+import java.util.Map;
+import java.time.*;
+import qmp.AccuWeatherAPI;
+
 public class Prenda {
   private final Color colorPrimario;
   private Color colorSecundario;
@@ -10,21 +15,23 @@ public class Prenda {
   private final Trama trama;
   private int cantVecesUsado = 0;
   private Estado estado = Estado.LIMPIA;
-  private Clima AptaClima;
+  private Clima aptaClima;
 
-  public Prenda(Color colorPrimario, Material material, TipoPrenda tipoPrenda, Trama trama) {
+  public Prenda(Color colorPrimario, Material material, TipoPrenda tipoPrenda, Trama trama, Clima aptoPara) {
     this.colorPrimario = requireNonNull(colorPrimario, "Dato color primario es obligatorio");
     this.material = requireNonNull(material, "Dato material es obligatorio");
     this.tipoPrenda = tipoPrenda;
     this.trama = trama;
+    this.aptaClima = aptoPara;
   }
 /*atributo TipoPrenda nunca sera null, dado que BorradorPrenda la inicializa siempre*/
-  public Prenda(Color colorPrimario, Color colorSecundario, Material material, TipoPrenda tipoPrenda, Trama trama) {
+  public Prenda(Color colorPrimario, Color colorSecundario, Material material, TipoPrenda tipoPrenda, Trama trama, Clima aptoPara) {
     this.colorPrimario = requireNonNull(colorPrimario, "Dato color primario es obligatorio");
     this.colorSecundario = colorSecundario;
     this.material = requireNonNull(material, "Dato material es obligatorio");
     this.tipoPrenda = tipoPrenda;
     this.trama = trama;
+    this.aptaClima = aptoPara;
   }
 
   public TipoPrenda getTipo() {
@@ -76,9 +83,36 @@ public class Prenda {
   }
   
   public boolean coincideClima() {
-	  return true; // 
+	  return this.climaHoy() == this.aptaClima;
   }
   
+  public Clima climaHoy() {
+	  if(temperaturaActual() > 20) {
+		  return Clima.CALOR;
+	  }if(temperaturaActual() < 10 ) {
+		  return Clima.FRIO;
+	  }else {
+		  return Clima.NORMAL;
+	  }
+  }
+  
+  /*Como usuarie de QuéMePongo, quiero poder conocer las condiciones climáticas 
+  de Buenos Aires en un momento dado para obtener sugerencias acordes.
+*/
+AccuWeatherAPI apiClima = new AccuWeatherAPI();
+
+List< Map<String, Object> > condicionesClimaticas = apiClima.getWeather("Buenos Aires, Argentina"); 
+
+Map<String, Object> climaActual = condicionesClimaticas.stream().filter( ) // tiene que devolver los datos de la temperatura de hoy con un filter tal vez
+
+
+// hay que filtar por fecha
+
+	int temperaturaActual() {
+		return condicionesClimaticas.get("temperatura ") //nose bien
+	}
+
+
 //PARA TESTS
   public int getCantVecesUsado() {
     return cantVecesUsado;

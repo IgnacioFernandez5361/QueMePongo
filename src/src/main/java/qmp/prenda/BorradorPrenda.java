@@ -11,7 +11,7 @@ public class BorradorPrenda {
     public Color colorSecundario;
     public Material material;
     public Trama trama;
-
+    public Clima clima;
 
     public BorradorPrenda(TipoPrenda tipoPrenda){
         this.tipoPrenda = tipoPrenda;
@@ -61,9 +61,9 @@ public Prenda generarPrenda(){
     this.completarTramaPorDefecto();
 
     if(colorSecundario != null)
-        return new Prenda(colorPrimario,colorSecundario,material,tipoPrenda,trama);
+        return new Prenda(colorPrimario,colorSecundario,material,tipoPrenda,trama, clima );
     else
-        return new Prenda(colorPrimario,material,tipoPrenda,trama);
+        return new Prenda(colorPrimario,material,tipoPrenda,trama, clima);
 
 
 }
