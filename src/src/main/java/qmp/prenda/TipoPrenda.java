@@ -7,16 +7,22 @@ public class TipoPrenda {
     private final HashSet<Color> coloresInconsistentes;
     private final HashSet<Material> materialesInconsistentes;
     private final HashSet<Trama> tramasInconsistentes;
+    private final double tempMax; //Creo que va en TipoPrenda
+
+    //DUDAS
+    //tempMax tiene mas sentido que vaya en Prenda, pero entonces habria que retocar un monton de mensajes en BorradorPrenda
+    //en TipoPrenda nos ahorramos todos los cambios, pero puede que sea innesesario ¿?
 
 
 
 
-    public TipoPrenda(Categoria categoria){
+    public TipoPrenda(Categoria categoria, double tempMax){
 
         this.categoria = categoria;
         this.coloresInconsistentes = new HashSet<>();
         this.materialesInconsistentes = new HashSet<>();
         this.tramasInconsistentes = new HashSet<>();
+        this.tempMax = tempMax;
 
     }
 
@@ -43,6 +49,10 @@ public class TipoPrenda {
             return !tramasInconsistentes.contains(trama);
         }
         else return false;
+    }
+    //Para avergiguar temperatura maxima
+    public double getTempMax(){
+        return this.tempMax;
     }
 
 

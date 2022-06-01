@@ -15,20 +15,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class testsugerencias {
 
 
-    TipoPrenda remera = new TipoPrenda(Categoria.PARTE_SUPERIOR);
+    TipoPrenda remera = new TipoPrenda(Categoria.PARTE_SUPERIOR, 20);
     Prenda remeraVerde = new Prenda(Color.VERDE, Material.POLIESTER, remera, Trama.LISA);
     Prenda remeraNegroConCalavera = new Prenda(Color.NEGRO, Color.BLANCO, Material.POLIESTER, remera, Trama.LISA);
     Prenda remeraGris = new Prenda(Color.GRIS, Material.POLIESTER, remera, Trama.LISA);
 
-    TipoPrenda shin = new TipoPrenda(Categoria.PARTE_INFERIOR);
+    TipoPrenda shin = new TipoPrenda(Categoria.PARTE_INFERIOR, 20);
     Prenda shinAzulSintetico = new Prenda(Color.AZUL, null, Material.SINTETICO, shin, Trama.LISA);
     Prenda shinRojizo = new Prenda(Color.ROJO, null, Material.SINTETICO, shin, Trama.LISA);
 
-    TipoPrenda zapatos = new TipoPrenda(Categoria.CALZADO);
+    TipoPrenda zapatos = new TipoPrenda(Categoria.CALZADO, 20);
     Prenda zapatosNegros = new Prenda(Color.NEGRO, null, Material.CUERO, zapatos, Trama.LISA);
     Prenda zapatosGris = new Prenda(Color.GRIS, null, Material.CUERO, zapatos, Trama.LISA);
 
-    Prenda gorro = new Prenda(Color.AZUL, Material.ALGODON, new TipoPrenda(Categoria.ACCESORIOS), Trama.LISA);
+    Prenda gorro = new Prenda(Color.AZUL, Material.ALGODON, new TipoPrenda(Categoria.ACCESORIOS, 20), Trama.LISA);
 
     List<Prenda> misPrendas= new ArrayList<>();
     Guardarropas guardaropas  = new Guardarropas(new ArrayList<Prenda>());

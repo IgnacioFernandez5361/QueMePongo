@@ -16,23 +16,23 @@ public class Prenda {
   private final Trama trama;
   private int cantVecesUsado = 0;
   private Estado estado = Estado.LIMPIA;
-  private Clima aptaClima;
+  //private Clima aptaClima;
 
-  public Prenda(Color colorPrimario, Material material, TipoPrenda tipoPrenda, Trama trama, Clima aptoPara) {
+  public Prenda(Color colorPrimario, Material material, TipoPrenda tipoPrenda, Trama trama) {
     this.colorPrimario = requireNonNull(colorPrimario, "Dato color primario es obligatorio");
     this.material = requireNonNull(material, "Dato material es obligatorio");
     this.tipoPrenda = tipoPrenda;
     this.trama = trama;
-    this.aptaClima = aptoPara;
+    //this.aptaClima = aptoPara; La dejo en comentario por las dudas
   }
 /*atributo TipoPrenda nunca sera null, dado que BorradorPrenda la inicializa siempre*/
-  public Prenda(Color colorPrimario, Color colorSecundario, Material material, TipoPrenda tipoPrenda, Trama trama, Clima aptoPara) {
+  public Prenda(Color colorPrimario, Color colorSecundario, Material material, TipoPrenda tipoPrenda, Trama trama) {
     this.colorPrimario = requireNonNull(colorPrimario, "Dato color primario es obligatorio");
     this.colorSecundario = colorSecundario;
     this.material = requireNonNull(material, "Dato material es obligatorio");
     this.tipoPrenda = tipoPrenda;
     this.trama = trama;
-    this.aptaClima = aptoPara;
+    //this.aptaClima = aptoPara;
   }
 
   public TipoPrenda getTipo() {
@@ -84,9 +84,13 @@ public class Prenda {
   }
   
   public boolean coincideClima() {
-	  return this.climaHoy() == this.aptaClima;
+	  return this.temperaturaActual() < tipoPrenda.getTempMax();
   }
-  
+
+  //La temperatura actual tiene que ser menor a la temperatura permitida por la prenda
+
+
+  /*
   public Clima climaHoy() {
 	  if(temperaturaActual() > 20) {
 		  return Clima.CALOR;
@@ -95,7 +99,7 @@ public class Prenda {
 	  }else {
 		  return Clima.NORMAL;
 	  }
-  }
+  }*/
   
   /*Como usuarie de QuéMePongo, quiero poder conocer las condiciones climáticas 
   de Buenos Aires en un momento dado para obtener sugerencias acordes.
@@ -115,7 +119,10 @@ Map<String, Object> climaActual = condicionesClimaticas.stream().filter( ) // ti
       List< Map<String, Object> > condicionesClimaticas = apiClima.getWeather("Buenos Aires, Argentina");
       //HashMap<String, Object> datos = (HashMap<String, Object>) condicionesClimaticas.get(57).get("Value"); //Mejorar por favor
       return (double) condicionesClimaticas.get(??).get("Temperature"); //nose bien
-	} //Que parametro tipo HashMap<String, Object> debo pasar para que me devuelva temperatura??
+	}
+    //DUDAS
+    //¿Que parametro tipo HashMap<String, Object> debo pasar para que me devuelva temperatura???
+    // Lo que retorna que tipo es? Es un tipo int, double o un objeto?
 
 
 //PARA TESTS
