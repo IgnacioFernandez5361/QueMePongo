@@ -11,27 +11,22 @@ public class Sugerencia {
 	Prenda sugerenciaAccesorio;
 
 	public Sugerencia(Prenda torso, Prenda piernas, Prenda pies){
-		if( torso.coincideClima()  && piernas.coincideClima() && pies.coincideClima() ) {
+
 			sugerenciaTorso = torso;
 			sugerenciaPiernas = piernas;
 			sugerenciaPies = pies;
 			usarPrendas();
-			}else {
-				 throw new PrendaNoAptaConElClimaActualException("Las prendas no son acordes con el clima actual");
-			}
+
 
 	}
 	//Constructo con accesorio
 	public Sugerencia(Prenda torso, Prenda piernas, Prenda pies ,Prenda accesorio){
-		if( torso.coincideClima()  && piernas.coincideClima() && pies.coincideClima() && accesorio.coincideClima()) {
 		sugerenciaTorso = torso;
 		sugerenciaPiernas = piernas;
 		sugerenciaPies = pies;
 		sugerenciaAccesorio = accesorio;
 		usarPrendas();
-		}else {
-			 throw new PrendaNoAptaConElClimaActualException("Las prendas no son acordes con el clima actual");
-		}
+
 		
 	}
 	

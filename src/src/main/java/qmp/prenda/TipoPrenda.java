@@ -8,12 +8,16 @@ public class TipoPrenda {
     private final HashSet<Material> materialesInconsistentes;
     private final HashSet<Trama> tramasInconsistentes;
 
+
+
+
     public TipoPrenda(Categoria categoria){
 
         this.categoria = categoria;
         this.coloresInconsistentes = new HashSet<>();
         this.materialesInconsistentes = new HashSet<>();
         this.tramasInconsistentes = new HashSet<>();
+
     }
 
     public Categoria getCategoria() {

@@ -2,9 +2,10 @@ package qmp.prenda;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.time.*;
+
 import qmp.AccuWeatherAPI;
 
 public class Prenda {
@@ -41,7 +42,7 @@ public class Prenda {
 /////
 
   public boolean sePuedeSugerir() {
-    return !this.estaLavandose() && !this.estaPercudida();
+    return !this.estaLavandose() && !this.estaPercudida() && this.coincideClima();
   }
 
   private boolean estaPercudida() {
@@ -108,9 +109,13 @@ Map<String, Object> climaActual = condicionesClimaticas.stream().filter( ) // ti
 
 // hay que filtar por fecha
 
-	int temperaturaActual() {
-		return condicionesClimaticas.get("temperatura ") //nose bien
-	}
+	double temperaturaActual() {
+      AccuWeatherAPI apiClima = new AccuWeatherAPI();
+
+      List< Map<String, Object> > condicionesClimaticas = apiClima.getWeather("Buenos Aires, Argentina");
+      //HashMap<String, Object> datos = (HashMap<String, Object>) condicionesClimaticas.get(57).get("Value"); //Mejorar por favor
+      return (double) condicionesClimaticas.get(??).get("Temperature"); //nose bien
+	} //Que parametro tipo HashMap<String, Object> debo pasar para que me devuelva temperatura??
 
 
 //PARA TESTS
