@@ -10,6 +10,7 @@ public class Prenda {
   private final Trama trama;
   private int cantVecesUsado = 0;
   private Estado estado = Estado.LIMPIA;
+  private Clima AptaClima;
 
   public Prenda(Color colorPrimario, Material material, TipoPrenda tipoPrenda, Trama trama) {
     this.colorPrimario = requireNonNull(colorPrimario, "Dato color primario es obligatorio");
@@ -73,6 +74,11 @@ public class Prenda {
       cantVecesUsado = 0;
     }
   }
+  
+  public boolean coincideClima() {
+	  return true; // 
+  }
+  
 //PARA TESTS
   public int getCantVecesUsado() {
     return cantVecesUsado;
