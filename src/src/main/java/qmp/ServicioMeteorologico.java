@@ -17,6 +17,13 @@ public class ServicioMeteorologico {
     this.periodoDeValidez = periodoDeValidez;
   }
 
+  public Double obtenerTemperatura(String direccion) {
+    Object pronosticoTemperatura = obtenerCondicionesClimaticas().get("Temperature");
+    Object valorTemperatura = ((Map)pronosticoTemperatura).get("Value");
+    Double temperatura = Double.parseDouble(valorTemperatura.toString());
+    return temperatura;
+  }
+
   public Map<String, Object> obtenerCondicionesClimaticas() {
     if (this.ultimaRespuesta == null || this.expiro()) {
       this.ultimaRespuesta = consultarApi(this.direccion);

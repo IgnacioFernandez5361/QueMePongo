@@ -102,11 +102,12 @@ public class Prenda {
   /*Como usuarie de QuéMePongo, quiero poder conocer las condiciones climáticas 
   de Buenos Aires en un momento dado para obtener sugerencias acordes.
 */
+
+  /* Dejo estas líneas de abajo comentadas, según creo el ServicioMeteorologico ya las soluciona:
   AccuWeatherAPI apiClima = new AccuWeatherAPI();
-
   List<Map<String, Object>> condicionesClimaticas = apiClima.getWeather("Buenos Aires, Argentina");
-
   Map<String, Object> climaActual = condicionesClimaticas.stream().filter() // tiene que devolver los datos de la temperatura de hoy con un filter tal vez
+   */
 
   //PARA TESTS
   public int getCantVecesUsado() {
@@ -122,5 +123,8 @@ public class Prenda {
     return this.temperaturaActual(direccion, servicioMeteorologico) < tipoPrenda.getTempMax();
   }//La temperatura actual tiene que ser menor a la temperatura permitida por la prenda
 
-  //crear metodo temperaturaActual
+  public Double temperaturaActual(String direccion, ServicioMeteorologico servicioMeteorologico) {
+    return servicioMeteorologico.obtenerTemperatura(direccion);
+  }
+
 }
