@@ -10,8 +10,7 @@ public class BorradorPrenda {
     public Color colorPrimario;
     public Color colorSecundario;
     public Material material;
-    public Trama trama;
-    public Clima clima;
+    public Trama trama = Trama.LISA;
 
     public BorradorPrenda(TipoPrenda tipoPrenda){
         this.tipoPrenda = tipoPrenda;
@@ -58,18 +57,10 @@ public class BorradorPrenda {
 
 public Prenda generarPrenda(){
     /*la validacion de datos ya lo haria el Constructor Prenda en clase Prenda */
-    this.completarTramaPorDefecto();
 
     if(colorSecundario != null)
-        return new Prenda(colorPrimario,colorSecundario,material,tipoPrenda,trama, clima );
+        return new Prenda(colorPrimario,colorSecundario,material,tipoPrenda,trama);
     else
-        return new Prenda(colorPrimario,material,tipoPrenda,trama, clima);
-
-
-}
-    private void completarTramaPorDefecto() {
-        if(this.trama == null){
-            this.trama = Trama.LISA;
-        }
+        return new Prenda(colorPrimario,material,tipoPrenda,trama);
     }
 }

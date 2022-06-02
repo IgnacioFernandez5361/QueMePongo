@@ -17,9 +17,7 @@ public class AsesorDeImagen {
 
     public Sugerencia sugerirAtuendo(String direccion){
         BorradorSugerencia borradorSugerencia = new BorradorSugerencia(guardarropas);
-        return borradorSugerencia.crearSugerencia(direccion, servicioMeteorologico);
-
-
+        return borradorSugerencia.crearSugerencia(servicioMeteorologico);
     }
 
 }

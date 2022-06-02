@@ -1,10 +1,12 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import qmp.ServicioMeteorologico;
 import qmp.guardarropas.BorradorSugerencia;
 import qmp.guardarropas.Guardarropas;
 import qmp.guardarropas.Sugerencia;
 import qmp.prenda.*;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +14,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class testsugerencias {
+public class testSugerencias {
 
 
     TipoPrenda remera = new TipoPrenda(Categoria.PARTE_SUPERIOR, 20);
@@ -54,15 +56,14 @@ public class testsugerencias {
         BorradorSugerencia borrador = new BorradorSugerencia(guardaropas);
     }
 
-
-
-
     @Test
     public void prendaApareceEnSugerenciaFueUsada(){
-        borrador.vestirTorso();
-        borrador.vestirPiernas();
-        borrador.vestirPies();
-        Sugerencia sugerencia = borrador.crearSugerencia();
+        ServicioMeteorologico servicioMeteorologico = new ServicioMeteorologico(Duration.ofMinutes(30),
+            "Buenos Aires, Argentina");
+        borrador.vestirTorso(servicioMeteorologico);
+        borrador.vestirPiernas(servicioMeteorologico);
+        borrador.vestirPies(servicioMeteorologico);
+        Sugerencia sugerencia = borrador.crearSugerencia(servicioMeteorologico);
         assertEquals(sugerencia.getSugerenciaPies().getCantVecesUsado(), 1);
         assertEquals(sugerencia.getSugerenciaTorso().getCantVecesUsado(), 1);
         assertEquals(sugerencia.getSugerenciaPies().getCantVecesUsado(), 1);
@@ -74,9 +75,4 @@ public class testsugerencias {
         assertEquals(gorro.getCantVecesUsado(), 0);
         assertEquals(remeraGris.getCantVecesUsado(), 0);
     }
-
-
-
-
-
 }

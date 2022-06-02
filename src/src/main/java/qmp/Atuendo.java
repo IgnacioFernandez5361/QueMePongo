@@ -7,6 +7,7 @@ import qmp.prenda.Prenda;
 
 public class Atuendo {
 /*Tal vez tendremos que cambiar diseño, a otro en donde usaremos una clase Atuendo*/
+  private Set<Prenda> prendas;
   public Atuendo(Set<Prenda> atuendo) {
     this.prendas = atuendo;
   }

@@ -31,11 +31,11 @@ public class Guardarropas {
     return null;
   }
       */
-  public Prenda buscarPrendaValidaDe(Categoria unaCategoria, String direccion, ServicioMeteorologico servicioMeteorologico ) {
+  public Prenda buscarPrendaValidaDe(Categoria unaCategoria, ServicioMeteorologico servicioMeteorologico ) {
 
     Stream<Prenda> prendasDeCategoria =  misPrendas.stream().filter(prenda -> prenda.perteneceCategoria(unaCategoria));
     Stream<Prenda> prendasSugeribles = prendasDeCategoria.filter(Prenda::sePuedeSugerir);
-    Stream<Prenda> prendas = prendasSugeribles.filter(prenda -> prenda.compatibleConClima(direccion, servicioMeteorologico));
+    Stream<Prenda> prendas = prendasSugeribles.filter(prenda -> prenda.compatibleConClima(servicioMeteorologico));
     if(prendas.count() == 0){
       return null;
     }

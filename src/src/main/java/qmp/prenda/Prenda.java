@@ -119,12 +119,7 @@ public class Prenda {
     return (this.getTipo().getCategoria() == unaCategoria);
   }
 
-  public boolean compatibleConClima(String direccion, ServicioMeteorologico servicioMeteorologico) {
-    return this.temperaturaActual(direccion, servicioMeteorologico) < tipoPrenda.getTempMax();
+  public boolean compatibleConClima(ServicioMeteorologico servicioMeteorologico) {
+    return servicioMeteorologico.obtenerTemperatura() < tipoPrenda.getTempMax();
   }//La temperatura actual tiene que ser menor a la temperatura permitida por la prenda
-
-  public Double temperaturaActual(String direccion, ServicioMeteorologico servicioMeteorologico) {
-    return servicioMeteorologico.obtenerTemperatura(direccion);
-  }
-
 }

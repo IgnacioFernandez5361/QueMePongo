@@ -29,8 +29,6 @@ public class Sugerencia {
 
 		
 	}
-	
-	
 
 	private void usarPrendas() {
 		sugerenciaTorso.seUsa();
@@ -62,7 +60,5 @@ public class Sugerencia {
 	public Prenda getSugerenciaAccesorio(){
 		return sugerenciaAccesorio;
 	}
-	
-	
-	
+
 }
