@@ -17,22 +17,22 @@ public BorradorSugerencia(Guardarropas guardarropa){
     }
 
     //guardarropa busca la prenda y en el proceso valida que esta no este lavada ni permutida
-    public void vestirTorso(){
-        this.sugerenciaTorso = guardarropa.buscarPrendaValidaDe(Categoria.PARTE_SUPERIOR) ;
+    public void vestirTorso(String direccion, ServicioMeteorologico servicioMeteorologico){
+        this.sugerenciaTorso = guardarropa.buscarPrendaValidaDe(Categoria.PARTE_SUPERIOR, direccion, servicioMeteorologico) ;
     }
-    public void vestirPiernas(){this.sugerenciaPiernas = guardarropa.buscarPrendaValidaDe(Categoria.PARTE_INFERIOR) ;}
-    public void vestirPies(){
-        this.sugerenciaPies = guardarropa.buscarPrendaValidaDe(Categoria.CALZADO);
+    public void vestirPiernas(String direccion, ServicioMeteorologico servicioMeteorologico){this.sugerenciaPiernas = guardarropa.buscarPrendaValidaDe(Categoria.PARTE_INFERIOR, direccion, servicioMeteorologico) ;}
+    public void vestirPies(String direccion, ServicioMeteorologico servicioMeteorologico){
+        this.sugerenciaPies = guardarropa.buscarPrendaValidaDe(Categoria.CALZADO, direccion, servicioMeteorologico);
     }
-    public void vestirAccesorios(){
-        this.sugerenciaAccesorio = guardarropa.buscarPrendaValidaDe(Categoria.CALZADO);
+    public void vestirAccesorios(String direccion, ServicioMeteorologico servicioMeteorologico){
+        this.sugerenciaAccesorio = guardarropa.buscarPrendaValidaDe(Categoria.CALZADO, direccion, servicioMeteorologico);
     }
 
-    public Sugerencia crearSugerencia(){
-        vestirTorso();
-        vestirPiernas();
-        vestirPies();
-        vestirAccesorios();
+    public Sugerencia crearSugerencia(String direccion, ServicioMeteorologico servicioMeteorologico){
+        vestirTorso(direccion, servicioMeteorologico);
+        vestirPiernas(direccion, servicioMeteorologico);
+        vestirPies(direccion, servicioMeteorologico); //Problema, pasamos demasiadas variables
+        vestirAccesorios(direccion, servicioMeteorologico);
         this.validarQueVisteCompletamente();//1ºValida que tenga torso, piernas y pies
         Sugerencia sugerencia;
         if(sugerenciaAccesorio != null){
@@ -51,6 +51,5 @@ public BorradorSugerencia(Guardarropas guardarropa){
         }
     }
 
-    //PARA TESTS
 
 }

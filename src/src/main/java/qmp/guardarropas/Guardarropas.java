@@ -5,17 +5,21 @@ import qmp.prenda.Categoria;
 import qmp.prenda.Prenda;
 
 import java.util.List;
-import java.util.SortedSet;
+import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 public class Guardarropas {
   private List<Prenda> misPrendas;
+/*,String direccion, ServicioMeteorologico servicioMeteorologico*/
 
-  public Prenda buscarPrendaValidaDe(Categoria unaCategoria) {
-    /* De la lista de prendas, filtra son de cierta categoría y se pueden sugerir.
+  /* De la lista de prendas, filtra son de cierta categoría y se pueden sugerir.
     Si encuentra alguna la devuelve, y si no, devuelve null.
     */
+
+  /*x
+  public Prenda buscarPrendaValidaDe(Categoria unaCategoria ) {
 
     List<Prenda> prendasDisponibles = this.misPrendas.stream().filter(prenda -> prenda.sePuedeSugerir())
         .filter(prenda -> prenda.getTipo().getCategoria() == unaCategoria).collect(Collectors.toList());
@@ -26,6 +30,22 @@ public class Guardarropas {
     }
     return null;
   }
+      */
+  public Prenda buscarPrendaValidaDe(Categoria unaCategoria, String direccion, ServicioMeteorologico servicioMeteorologico ) {
+
+    Stream<Prenda> prendasDeCategoria =  misPrendas.stream().filter(prenda -> prenda.perteneceCategoria(unaCategoria));
+    Stream<Prenda> prendasSugeribles = prendasDeCategoria.filter(Prenda::sePuedeSugerir);
+    Stream<Prenda> prendas = prendasSugeribles.filter(prenda -> prenda.compatibleConClima(direccion, servicioMeteorologico));
+    if(prendas.count() == 0){
+      return null;
+    }
+    else{
+      return prendas.findFirst().get();
+    }
+  } //SE PUEDE MEJORAR
+
+  //Puede ser que tengamos que modificar el diseño de SugerenciaBorrador
+
 
   public Guardarropas(List<Prenda> prendas){
     this.misPrendas = prendas;

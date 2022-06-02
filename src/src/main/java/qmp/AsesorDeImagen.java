@@ -14,12 +14,12 @@ public class AsesorDeImagen {
         this.servicioMeteorologico = servicioMeteorologico;
         this.guardarropas = guardarropas;
     }
-/*
+
     public Sugerencia sugerirAtuendo(String direccion){
         BorradorSugerencia borradorSugerencia = new BorradorSugerencia(guardarropas);
         return borradorSugerencia.crearSugerencia(direccion, servicioMeteorologico);
 
 
-    } */
+    }
 
 }
