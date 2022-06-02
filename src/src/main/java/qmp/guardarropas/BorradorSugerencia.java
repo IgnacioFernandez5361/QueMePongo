@@ -1,9 +1,8 @@
 package qmp.guardarropas;
 
+import qmp.ServicioMeteorologico;
 import qmp.prenda.Categoria;
 import qmp.prenda.Prenda;
-
-import java.util.List;
 
 public class BorradorSugerencia {
     Prenda sugerenciaTorso;
@@ -21,11 +20,7 @@ public BorradorSugerencia(Guardarropas guardarropa){
     public void vestirTorso(){
         this.sugerenciaTorso = guardarropa.buscarPrendaValidaDe(Categoria.PARTE_SUPERIOR) ;
     }
-
-    public void vestirPiernas(){
-        this.sugerenciaPiernas = guardarropa.buscarPrendaValidaDe(Categoria.PARTE_INFERIOR) ;
-    }
-
+    public void vestirPiernas(){this.sugerenciaPiernas = guardarropa.buscarPrendaValidaDe(Categoria.PARTE_INFERIOR) ;}
     public void vestirPies(){
         this.sugerenciaPies = guardarropa.buscarPrendaValidaDe(Categoria.CALZADO);
     }
@@ -34,7 +29,11 @@ public BorradorSugerencia(Guardarropas guardarropa){
     }
 
     public Sugerencia crearSugerencia(){
-        this.validarQueVisteCompletamente(); //1ºValida que tenga torso, piernas y pies
+        vestirTorso();
+        vestirPiernas();
+        vestirPies();
+        vestirAccesorios();
+        this.validarQueVisteCompletamente();//1ºValida que tenga torso, piernas y pies
         Sugerencia sugerencia;
         if(sugerenciaAccesorio != null){
             sugerencia = new Sugerencia(sugerenciaTorso, sugerenciaPiernas, sugerenciaPies, sugerenciaAccesorio);

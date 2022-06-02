@@ -1,9 +1,11 @@
 package qmp.guardarropas;
 
+import qmp.ServicioMeteorologico;
 import qmp.prenda.Categoria;
 import qmp.prenda.Prenda;
 
 import java.util.List;
+import java.util.SortedSet;
 import java.util.stream.Collectors;
 
 
@@ -32,6 +34,7 @@ public class Guardarropas {
   void setMisPrendas(List<Prenda> prendas ){
     this.misPrendas = prendas;
   }
+
 
 /*
   public void darSugerencia() {

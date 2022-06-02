@@ -114,7 +114,8 @@ Map<String, Object> climaActual = condicionesClimaticas.stream().filter( ) // ti
 // hay que filtar por fecha
 
 	double temperaturaActual() {
-      AccuWeatherAPI apiClima = new AccuWeatherAPI();
+      AccuWeatherAPI api;
+
 
       List< Map<String, Object> > condicionesClimaticas = apiClima.getWeather("Buenos Aires, Argentina");
       //HashMap<String, Object> datos = (HashMap<String, Object>) condicionesClimaticas.get(57).get("Value"); //Mejorar por favor
