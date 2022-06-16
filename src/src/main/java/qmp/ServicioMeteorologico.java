@@ -11,6 +11,7 @@ public class ServicioMeteorologico {
   private Duration periodoDeValidez;
 
   public ServicioMeteorologico(Duration periodoDeValidez, String direccion) {
+    this.proximaExpiracion = LocalDateTime.now();
     this.proximaExpiracion = proximaExpiracion.plus(periodoDeValidez);
     this.direccion = direccion;
     this.periodoDeValidez = periodoDeValidez;

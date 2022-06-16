@@ -3,17 +3,19 @@ package qmp.propuesta;
 import qmp.guardarropas.Guardarropas;
 import qmp.prenda.Prenda;
 
-public class PropuestaAgregar implements Propuesta {
-    Prenda prendaAAgregar;
-    EstadoPropuesta estado;
+public class PropuestaAgregar extends Propuesta {
 
-    public PropuestaAgregar(Prenda prenda) {
-        this.prendaAAgregar = prenda;
-        this.estado = EstadoPropuesta.PENDIENTE;
-    }
+  public PropuestaAgregar(Prenda prenda) {
+    this.prenda = prenda;
+    this.estado = EstadoPropuesta.PENDIENTE;
+  }
 
-    public void aceptarEn(Guardarropas guardarropas){
-        guardarropas.agregarPrenda(this.prendaAAgregar);
-        this.estado = EstadoPropuesta.ACEPTADA;
-    }
+  public void aceptarEn(Guardarropas guardarropas) {
+    guardarropas.agregarPrenda(this.prenda);
+    this.estado = EstadoPropuesta.ACEPTADA;
+  }
+
+  public void deshacerEn(Guardarropas guardarropas) {
+    guardarropas.quitarPrenda(prenda);
+  }
 }
