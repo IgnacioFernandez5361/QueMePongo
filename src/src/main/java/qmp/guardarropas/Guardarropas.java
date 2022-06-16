@@ -1,6 +1,7 @@
 package qmp.guardarropas;
 
 import qmp.ServicioMeteorologico;
+import qmp.Usuario;
 import qmp.prenda.Categoria;
 import qmp.prenda.Prenda;
 
@@ -12,6 +13,8 @@ import java.util.stream.Stream;
 
 public class Guardarropas {
   private List<Prenda> misPrendas;
+  private String nombre;
+  private List<Usuario> ComparteELGaurdarropas; 
 /*,String direccion, ServicioMeteorologico servicioMeteorologico*/
 
   /* De la lista de prendas, filtra son de cierta categoría y se pueden sugerir.
@@ -47,9 +50,12 @@ public class Guardarropas {
   //Puede ser que tengamos que modificar el diseño de SugerenciaBorrador
 
 
-  public Guardarropas(List<Prenda> prendas){
+  public Guardarropas(List<Prenda> prendas , String nombre , List<Usuario> comparte){
     this.misPrendas = prendas;
+    this.nombre = nombre;
+    this.ComparteELGaurdarropas = comparte;
   }
+  
   //Para tests
   void setMisPrendas(List<Prenda> prendas ){
     this.misPrendas = prendas;
