@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import qmp.PropuestaAgregar;
 import qmp.ServicioMeteorologico;
 import qmp.guardarropas.BorradorSugerencia;
 import qmp.guardarropas.Guardarropas;
@@ -33,8 +34,8 @@ public class testSugerencias {
     Prenda gorro = new Prenda(Color.AZUL, Material.ALGODON, new TipoPrenda(Categoria.ACCESORIOS, 20), Trama.LISA);
 
     List<Prenda> misPrendas= new ArrayList<>();
-    Guardarropas guardaropas  = new Guardarropas(new ArrayList<Prenda>());
-    BorradorSugerencia borrador = new BorradorSugerencia(new Guardarropas(new ArrayList<Prenda>()));
+    Guardarropas guardaropas  = new Guardarropas(new ArrayList<Prenda>(), new PropuestaAgregar() );
+    BorradorSugerencia borrador = new BorradorSugerencia(new Guardarropas(new ArrayList<Prenda>(), new PropuestaAgregar()));
 
 
 
@@ -52,7 +53,7 @@ public class testSugerencias {
         misPrendas.add(zapatosGris);
         misPrendas.add(gorro);
 
-        Guardarropas guardaropas  = new Guardarropas(misPrendas);
+        Guardarropas guardaropas  = new Guardarropas(misPrendas, new PropuestaAgregar());
         BorradorSugerencia borrador = new BorradorSugerencia(guardaropas);
     }
 

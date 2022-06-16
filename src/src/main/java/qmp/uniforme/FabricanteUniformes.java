@@ -22,7 +22,7 @@ class SanJuan extends FabricanteUniformes{
 
     /*chomba verde de piqué*/
     Prenda fabricarParteSuperior(){
-        BorradorPrenda borrador =  new BorradorPrenda(new TipoPrenda(Categoria.PARTE_SUPERIOR));
+        BorradorPrenda borrador =  new BorradorPrenda(new TipoPrenda(Categoria.PARTE_SUPERIOR, 0)); /*Que temperatura deberia pasar??*/
         borrador.agregarColorPrimario(Color.VERDE); /*Arreglar TipoPrenda, sino va a tener problema para habilitar colores y materiales*/
         borrador.agregarMaterial(Material.PIQUE);
         return  borrador.generarPrenda();
@@ -30,14 +30,14 @@ class SanJuan extends FabricanteUniformes{
     }
     /*pantalón de acetato gris*/
     Prenda fabricarParteInferior(){
-        BorradorPrenda borrador = new BorradorPrenda(new TipoPrenda(Categoria.PARTE_INFERIOR));
+        BorradorPrenda borrador = new BorradorPrenda(new TipoPrenda(Categoria.PARTE_INFERIOR,0));
         borrador.agregarColorPrimario(Color.GRIS);
         borrador.agregarMaterial(Material.ACETATO);
         return  borrador.generarPrenda();
     }
     /*zapatillas blancas*/
     Prenda fabricarCalzado(){
-        BorradorPrenda borrador = new BorradorPrenda(new TipoPrenda(Categoria.CALZADO));
+        BorradorPrenda borrador = new BorradorPrenda(new TipoPrenda(Categoria.CALZADO,0));
         borrador.agregarColorPrimario(Color.BLANCO);
         return  borrador.generarPrenda();
     }
@@ -48,20 +48,20 @@ class InstitutoJonson extends FabricanteUniformes{
 
     /*camisa blanca*/
     Prenda fabricarParteSuperior(){
-        BorradorPrenda borrador =  new BorradorPrenda(new TipoPrenda(Categoria.PARTE_SUPERIOR));
+        BorradorPrenda borrador =  new BorradorPrenda(new TipoPrenda(Categoria.PARTE_SUPERIOR,0));
         borrador.agregarColorPrimario(Color.BLANCO);
         return borrador.generarPrenda();
     }
     /* pantalón de vestir negro */
     Prenda fabricarParteInferior(){
-        BorradorPrenda borrador = new BorradorPrenda(new TipoPrenda(Categoria.PARTE_INFERIOR));
+        BorradorPrenda borrador = new BorradorPrenda(new TipoPrenda(Categoria.PARTE_INFERIOR,0));
         borrador.agregarColorPrimario(Color.NEGRO);
         borrador.agregarMaterial(Material.DE_VESTIR);
         return borrador.generarPrenda();
     }
     /* zapatos negros*/
     Prenda fabricarCalzado(){
-        BorradorPrenda borrador = new BorradorPrenda(new TipoPrenda(Categoria.CALZADO));
+        BorradorPrenda borrador = new BorradorPrenda(new TipoPrenda(Categoria.CALZADO,0));
         borrador.agregarColorPrimario(Color.NEGRO);
         return  borrador.generarPrenda();
     }
