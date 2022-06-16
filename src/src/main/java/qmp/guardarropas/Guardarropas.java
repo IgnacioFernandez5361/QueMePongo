@@ -1,6 +1,7 @@
 package qmp.guardarropas;
 
 import qmp.PropuestaAgregar;
+import qmp.PropuestaQuitado;
 import qmp.ServicioMeteorologico;
 import qmp.Usuario;
 import qmp.prenda.Categoria;
@@ -99,7 +100,7 @@ public class Guardarropas {
 
 
   //5°Iteracion
-
+ //3°Requerimiento
   public void agregarPrenda(Prenda prenda){
     misPrendas.add(prenda);
   }
@@ -107,4 +108,12 @@ public class Guardarropas {
   public void aceptar(PropuestaAgregar propuestaAgregar){
     propuestaAgregar.aceptarEn(this);
   }
+
+  public void quitarPrenda(Prenda prenda) {
+    misPrendas.remove(prenda);
+  }
+  public void aceptar(PropuestaQuitado propuestaQuitado){
+    propuestaQuitado.aceptarEn(this);
+  }
+
 }
