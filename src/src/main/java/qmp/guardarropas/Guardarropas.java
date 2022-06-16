@@ -1,16 +1,13 @@
 package qmp.guardarropas;
 
-import qmp.PropuestaAgregar;
-import qmp.PropuestaQuitado;
+import qmp.propuesta.PropuestaAgregar;
+import qmp.propuesta.PropuestaQuitado;
 import qmp.ServicioMeteorologico;
 import qmp.Usuario;
 import qmp.prenda.Categoria;
 import qmp.prenda.Prenda;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 

@@ -1,4 +1,4 @@
-package qmp;
+package qmp.propuesta;
 
 import qmp.guardarropas.Guardarropas;
 import qmp.prenda.Prenda;

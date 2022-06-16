@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import qmp.PropuestaAgregar;
+import qmp.propuesta.PropuestaAgregar;
 import qmp.ServicioMeteorologico;
 import qmp.Usuario;
 import qmp.guardarropas.BorradorSugerencia;
