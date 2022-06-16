@@ -2,6 +2,7 @@ package qmp.guardarropas;
 
 import qmp.PropuestaAgregar;
 import qmp.ServicioMeteorologico;
+import qmp.Usuario;
 import qmp.prenda.Categoria;
 import qmp.prenda.Prenda;
 
@@ -13,6 +14,8 @@ import java.util.stream.Stream;
 
 public class Guardarropas {
   private List<Prenda> misPrendas;
+  private String nombre;
+  private List<Usuario> ComparteELGaurdarropas;
 
   private PropuestaAgregar propuestaAgregar;
 
@@ -54,9 +57,13 @@ public class Guardarropas {
 
   public Guardarropas(List<Prenda> prendas, PropuestaAgregar propuestaAgregar){
 
+  public Guardarropas(List<Prenda> prendas , String nombre , List<Usuario> comparte){
     this.misPrendas = prendas;
     this.propuestaAgregar = propuestaAgregar;
+    this.nombre = nombre;
+    this.ComparteELGaurdarropas = comparte;
   }
+
   //Para tests
   void setMisPrendas(List<Prenda> prendas ){
     this.misPrendas = prendas;
