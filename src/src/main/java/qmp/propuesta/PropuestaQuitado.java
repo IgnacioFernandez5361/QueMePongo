@@ -12,7 +12,7 @@ public class PropuestaQuitado extends Propuesta {
 
   public void aceptarEn(Guardarropas guardarropas) {
     guardarropas.quitarPrenda(prenda);
-    this.estado = EstadoPropuesta.RECHAZADA;
+    this.estado = EstadoPropuesta.ACEPTADA;
   }
 
   public void deshacerEn(Guardarropas guardarropas) {
