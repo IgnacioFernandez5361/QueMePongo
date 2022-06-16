@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import qmp.propuesta.Propuesta;
 import qmp.propuesta.PropuestaAgregar;
 import qmp.ServicioMeteorologico;
 import qmp.Usuario;
@@ -23,9 +24,9 @@ public class testSugerencias {
     Prenda remeraNegroConCalavera = new Prenda(Color.NEGRO, Color.BLANCO, Material.POLIESTER, remera, Trama.LISA);
     Prenda remeraGris = new Prenda(Color.GRIS, Material.POLIESTER, remera, Trama.LISA);
 
-    TipoPrenda shin = new TipoPrenda(Categoria.PARTE_INFERIOR, 20);
-    Prenda shinAzulSintetico = new Prenda(Color.AZUL, null, Material.SINTETICO, shin, Trama.LISA);
-    Prenda shinRojizo = new Prenda(Color.ROJO, null, Material.SINTETICO, shin, Trama.LISA);
+    TipoPrenda jeans = new TipoPrenda(Categoria.PARTE_INFERIOR, 20);
+    Prenda jeansAzulSintetico = new Prenda(Color.AZUL, null, Material.SINTETICO, jeans, Trama.LISA);
+    Prenda jeansRojizo = new Prenda(Color.ROJO, null, Material.SINTETICO, jeans, Trama.LISA);
 
     TipoPrenda zapatos = new TipoPrenda(Categoria.CALZADO, 20);
     Prenda zapatosNegros = new Prenda(Color.NEGRO, null, Material.CUERO, zapatos, Trama.LISA);
@@ -35,26 +36,20 @@ public class testSugerencias {
 
     List<Prenda> misPrendas= new ArrayList<>();
     //Guardarropas guardaropas  = new Guardarropas(new ArrayList<Prenda>(), "uno", new List<Usuario>(), new PropuestaAgregar());
-    BorradorSugerencia borrador = new BorradorSugerencia(new Guardarropas(new ArrayList<Prenda>(), "uno", new ArrayList<Usuario>(), new PropuestaAgregar()));
 
-
+    Guardarropas guardaropas  = new Guardarropas(misPrendas,"uno",new ArrayList<>(),
+        new ArrayList<Propuesta>());
+    BorradorSugerencia borrador  = new BorradorSugerencia(guardaropas);
 
     @BeforeEach
     public void init() { //Despues simplificar y delegar
-
-
-
         misPrendas.add(remeraVerde);
         misPrendas.add(remeraNegroConCalavera);
         misPrendas.add(remeraGris);
-        misPrendas.add(shinAzulSintetico);
-        misPrendas.add(shinRojizo);
+        misPrendas.add(jeansAzulSintetico);
+        misPrendas.add(jeansRojizo);
         misPrendas.add(zapatosNegros);
-        misPrendas.add(zapatosGris);
         misPrendas.add(gorro);
-
-        Guardarropas guardaropas  = new Guardarropas(misPrendas,"uno",new ArrayList<>(), new PropuestaAgregar());
-        BorradorSugerencia borrador = new BorradorSugerencia(guardaropas);
     }
 
     @Test

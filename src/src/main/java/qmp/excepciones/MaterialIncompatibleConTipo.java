@@ -1,4 +1,4 @@
-package qmp.excepcciones;
+package qmp.excepciones;
 
 public class MaterialIncompatibleConTipo extends RuntimeException{
 

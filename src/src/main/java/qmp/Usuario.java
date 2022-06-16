@@ -14,7 +14,7 @@ public class Usuario {
   }
 
   
-  void agregarGuardarropas( Guardarropas nuevoGuardarropa){
+  void agregarGuardarropas(Guardarropas nuevoGuardarropa){
     misGuardarropas.add(nuevoGuardarropa);
   }
   

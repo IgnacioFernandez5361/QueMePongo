@@ -1,8 +1,8 @@
 package qmp.prenda;
 
-import qmp.excepcciones.ColorIncompatibleConTipoException;
-import qmp.excepcciones.MaterialIncompatibleConTipo;
-import qmp.excepcciones.TramaIncompatibleConTipoException;
+import qmp.excepciones.ColorIncompatibleConTipoException;
+import qmp.excepciones.MaterialIncompatibleConTipo;
+import qmp.excepciones.TramaIncompatibleConTipoException;
 
 public class BorradorPrenda {
 

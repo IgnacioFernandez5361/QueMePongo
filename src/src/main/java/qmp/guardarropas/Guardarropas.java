@@ -1,5 +1,6 @@
 package qmp.guardarropas;
 
+import qmp.propuesta.Propuesta;
 import qmp.propuesta.PropuestaAgregar;
 import qmp.propuesta.PropuestaQuitado;
 import qmp.ServicioMeteorologico;
@@ -14,30 +15,17 @@ import java.util.stream.Stream;
 public class Guardarropas {
   private List<Prenda> misPrendas;
   private String nombre;
-  private List<Usuario> comparteElGuardarropas;
+  private List<Usuario> usuarios;
+  private List<Propuesta> propuestas;
 
-  private PropuestaAgregar propuestaAgregar;
-
-
-  /*,String direccion, ServicioMeteorologico servicioMeteorologico*/
-
-  /* De la lista de prendas, filtra son de cierta categoría y se pueden sugerir.
-    Si encuentra alguna la devuelve, y si no, devuelve null.
-    */
-
-  /*x
-  public Prenda buscarPrendaValidaDe(Categoria unaCategoria ) {
-
-    List<Prenda> prendasDisponibles = this.misPrendas.stream().filter(prenda -> prenda.sePuedeSugerir())
-        .filter(prenda -> prenda.getTipo().getCategoria() == unaCategoria).collect(Collectors.toList());
-    if (prendasDisponibles.size() > 0) {
-      for (Prenda p : prendasDisponibles) {
-        return p;
-      }
-    }
-    return null;
+  public Guardarropas(List<Prenda> prendas , String nombre , List<Usuario> usuarios,
+                      List<Propuesta> propuestas) {
+    this.misPrendas = prendas;
+    this.propuestas = propuestas;
+    this.nombre = nombre;
+    this.usuarios = usuarios;
   }
-      */
+
   public Prenda buscarPrendaValidaDe(Categoria unaCategoria, ServicioMeteorologico servicioMeteorologico ) {
 
     Stream<Prenda> prendasDeCategoria =  misPrendas.stream().filter(prenda -> prenda.perteneceCategoria(unaCategoria));
@@ -50,67 +38,22 @@ public class Guardarropas {
 
       return prendas.findFirst().get();
     }
-  } //SE PUEDE MEJORAR
+  }
 
-  //Puede ser que tengamos que modificar el diseño de SugerenciaBorrador
-
-
-  //public Guardarropas(List<Prenda> prendas, PropuestaAgregar propuestaAgregar){
-
-  public Guardarropas(List<Prenda> prendas , String nombre , List<Usuario> comparteElGuardarropas, PropuestaAgregar propuestaAgregar){
+  void setMisPrendas(List<Prenda> prendas){
     this.misPrendas = prendas;
-    this.propuestaAgregar = propuestaAgregar;
-    this.nombre = nombre;
-    this.comparteElGuardarropas = comparteElGuardarropas;
-  }
-
-  //Para tests
-  void setMisPrendas(List<Prenda> prendas ){
-    this.misPrendas = prendas;
-  }
-
-
-/*
-  public void darSugerencia() {
-
-    // Busco una prenda válida de cada tipo para armar la sugerencia
-    Prenda torso = buscarPrendaValidaDe(Categoria.PARTE_SUPERIOR);
-    Prenda piernas = buscarPrendaValidaDe(Categoria.PARTE_INFERIOR);
-    Prenda pies = buscarPrendaValidaDe(Categoria.CALZADO);
-    Prenda accesorios = buscarPrendaValidaDe(Categoria.ACCESORIOS);
-
-    // Si encuentra al menos una para torso, piernas y pies: la crea.
-    if (torso != null && piernas != null && pies != null) {
-      if (accesorios == null) {
-        Sugerencia nuevaSugerencia = new Sugerencia(torso, piernas, pies);
-      } else {
-        Sugerencia nuevaSugerencia = new Sugerencia(torso, piernas, pies, accesorios);
-      } //La actualizacion de estado la realiza Sugerencia en el constructor
-
-    } else {
-      // Y si no es posible, lanzo excepción.
-      throw new RuntimeException("Faltan prendas de alguna categoría en el guardarropas");
-    }
-  }
-
- */
-
-
-  //5°Iteracion
- //3°Requerimiento
-  public void agregarPrenda(Prenda prenda){
-    misPrendas.add(prenda);
-  }
-//hariamos aceptar(new PropuestaAgregar(new Prenda(...)))
-  public void aceptar(PropuestaAgregar propuestaAgregar){
-    propuestaAgregar.aceptarEn(this);
   }
 
   public void quitarPrenda(Prenda prenda) {
     misPrendas.remove(prenda);
   }
-  public void aceptar(PropuestaQuitado propuestaQuitado){
-    propuestaQuitado.aceptarEn(this);
+
+  public void agregarPrenda(Prenda prenda){
+    misPrendas.add(prenda);
   }
 
+  public void aceptar(Propuesta propuesta){
+    propuesta.aceptarEn(this);
+    propuestas.add(propuesta);
+  }
 }

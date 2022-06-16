@@ -2,8 +2,6 @@ package qmp.guardarropas;
 
 import qmp.prenda.Prenda;
 
-import qmp.excepcciones.PrendaNoAptaConElClimaActualException;
-
 public class Sugerencia {
 	Prenda sugerenciaTorso;
 	Prenda sugerenciaPiernas;
@@ -11,14 +9,12 @@ public class Sugerencia {
 	Prenda sugerenciaAccesorio;
 
 	public Sugerencia(Prenda torso, Prenda piernas, Prenda pies){
-
 			sugerenciaTorso = torso;
 			sugerenciaPiernas = piernas;
 			sugerenciaPies = pies;
 			usarPrendas();
-
-
 	}
+
 	//Constructo con accesorio
 	public Sugerencia(Prenda torso, Prenda piernas, Prenda pies ,Prenda accesorio){
 		sugerenciaTorso = torso;
@@ -34,8 +30,8 @@ public class Sugerencia {
 		sugerenciaTorso.seUsa();
 		sugerenciaPiernas.seUsa();
 		sugerenciaPies.seUsa();
-		if(this.sugerenciaAccesorio !=null){
-			sugerenciaAccesorio.seUsa();;
+		if(this.sugerenciaAccesorio != null){
+			sugerenciaAccesorio.seUsa();
 		}
 	}
 
