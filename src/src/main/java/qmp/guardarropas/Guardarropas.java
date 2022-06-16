@@ -6,6 +6,7 @@ import qmp.Usuario;
 import qmp.prenda.Categoria;
 import qmp.prenda.Prenda;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -15,11 +16,12 @@ import java.util.stream.Stream;
 public class Guardarropas {
   private List<Prenda> misPrendas;
   private String nombre;
-  private List<Usuario> ComparteELGaurdarropas;
+  private List<Usuario> comparteElGuardarropas;
 
   private PropuestaAgregar propuestaAgregar;
 
-/*,String direccion, ServicioMeteorologico servicioMeteorologico*/
+
+  /*,String direccion, ServicioMeteorologico servicioMeteorologico*/
 
   /* De la lista de prendas, filtra son de cierta categoría y se pueden sugerir.
     Si encuentra alguna la devuelve, y si no, devuelve null.
@@ -55,13 +57,13 @@ public class Guardarropas {
   //Puede ser que tengamos que modificar el diseño de SugerenciaBorrador
 
 
-  public Guardarropas(List<Prenda> prendas, PropuestaAgregar propuestaAgregar){
+  //public Guardarropas(List<Prenda> prendas, PropuestaAgregar propuestaAgregar){
 
-  public Guardarropas(List<Prenda> prendas , String nombre , List<Usuario> comparte){
+  public Guardarropas(List<Prenda> prendas , String nombre , List<Usuario> comparteElGuardarropas, PropuestaAgregar propuestaAgregar){
     this.misPrendas = prendas;
     this.propuestaAgregar = propuestaAgregar;
     this.nombre = nombre;
-    this.ComparteELGaurdarropas = comparte;
+    this.comparteElGuardarropas = comparteElGuardarropas;
   }
 
   //Para tests
