@@ -7,7 +7,9 @@ public abstract class Propuesta {
   public Prenda prenda;
   public EstadoPropuesta estado;
 
-  public abstract void aceptarEn(Guardarropas guardarropas);
+  public void aceptarEn(Guardarropas guardarropas) {
+    this.estado = EstadoPropuesta.ACEPTADA;
+  }
 
   public abstract void deshacerEn(Guardarropas guardarropas);
 

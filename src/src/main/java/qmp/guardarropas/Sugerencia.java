@@ -22,8 +22,6 @@ public class Sugerencia {
 		sugerenciaPies = pies;
 		sugerenciaAccesorio = accesorio;
 		usarPrendas();
-
-		
 	}
 
 	private void usarPrendas() {

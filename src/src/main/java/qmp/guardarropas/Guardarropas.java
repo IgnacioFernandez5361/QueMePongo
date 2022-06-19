@@ -59,13 +59,16 @@ public class Guardarropas {
     return getPropuestasSegun(EstadoPropuesta.PENDIENTE);
   }
 
+  public void agregarPropuesta(Propuesta propuesta) {
+    propuestas.add(propuesta);
+  }
+
   public void deshacerPropuestasAceptadas() {
     List<Propuesta> propuestasAceptadas = getPropuestasSegun(EstadoPropuesta.ACEPTADA);
     propuestasAceptadas.forEach(propuesta -> propuesta.deshacerEn(this));
   }
 
-  public void aceptar(Propuesta propuesta) {
+  public void aceptarPropuesta(Propuesta propuesta) {
     propuesta.aceptarEn(this);
-    propuestas.add(propuesta);
   }
 }

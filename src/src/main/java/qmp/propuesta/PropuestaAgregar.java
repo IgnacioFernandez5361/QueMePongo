@@ -11,8 +11,8 @@ public class PropuestaAgregar extends Propuesta {
   }
 
   public void aceptarEn(Guardarropas guardarropas) {
+    super.aceptarEn(guardarropas);
     guardarropas.agregarPrenda(this.prenda);
-    this.estado = EstadoPropuesta.ACEPTADA;
   }
 
   public void deshacerEn(Guardarropas guardarropas) {
