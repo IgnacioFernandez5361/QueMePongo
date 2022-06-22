@@ -10,6 +10,7 @@ import qmp.prenda.Categoria;
 import qmp.prenda.Prenda;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -18,6 +19,14 @@ public class Guardarropas {
   private List<Prenda> misPrendas;
   private String nombre;
   private List<Propuesta> propuestas;
+
+  /*Pensaba cambiar atributo:
+   * MisPrendas => prendaSuperior, prendaInferior, prendaCalzado, etc*/
+
+  private List<Prenda> prendasSuperiores;
+  private Set<Prenda> prendasInferiores;
+  private Set<Prenda> prendasCalzado;
+
 
   public Guardarropas(List<Prenda> prendas, String nombre, List<Propuesta> propuestas) {
     this.misPrendas = prendas;
@@ -71,4 +80,9 @@ public class Guardarropas {
   public void aceptarPropuesta(Propuesta propuesta) {
     propuesta.aceptarEn(this);
   }
+/*
+  //Iteracion 3
+  public Atuendo generarSugerencia(){
+    return new Atuendo(prendasSuperiores.stream().findFirst(), prendasInferiores.stream().findFirst(), prendasCalzado.stream().findFirst());
+  }*/
 }
