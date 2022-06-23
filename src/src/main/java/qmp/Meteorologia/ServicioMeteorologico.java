@@ -11,6 +11,7 @@ public class ServicioMeteorologico {
   private AccuWeatherAPI api = new AccuWeatherAPI();
   private String direccion;
   private Duration periodoDeValidez;
+  private Map<String, List<String>> alertas;
 
   public ServicioMeteorologico(Duration periodoDeValidez, String direccion) {
     this.proximaExpiracion = LocalDateTime.now();
@@ -33,6 +34,17 @@ public class ServicioMeteorologico {
       this.proximaExpiracion = LocalDateTime.now().plus(this.periodoDeValidez);
     }
     return this.ultimaRespuesta;
+  }
+
+  public void actualizarAlertas(){
+    Map<String, List<String>> nuevasAlertas = api.getAlerts(direccion);
+    if(!alertas.get("CurrentAlerts").equals(nuevasAlertas.get("CurrentAlerts"))){
+      alertas = nuevasAlertas;
+    }
+  }
+
+  public List<String> consultarAlertasActuales(){
+    return alertas.get("CurrentAlerts");
   }
 
   private Map<String, Object> consultarApi() {
