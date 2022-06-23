@@ -2,9 +2,11 @@ package qmp.guardarropas;
 
 import qmp.propuesta.EstadoPropuesta;
 import qmp.propuesta.Propuesta;
-import qmp.Meteorologia.ServicioMeteorologico;
+import qmp.meteorologia.ServicioMeteorologico;
 import qmp.prenda.Categoria;
 import qmp.prenda.Prenda;
+import sun.security.ec.SunEC;
+
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -13,20 +15,10 @@ import java.util.stream.Stream;
 
 public class Guardarropas {
   private List<Prenda> misPrendas;
-  private String nombre;
   private List<Propuesta> propuestas;
 
-  /*Pensaba cambiar atributo:
-   * MisPrendas => prendaSuperior, prendaInferior, prendaCalzado, etc*/
-
-  private List<Prenda> prendasSuperiores;
-  private Set<Prenda> prendasInferiores;
-  private Set<Prenda> prendasCalzado;
-
-
-  public Guardarropas(List<Prenda> prendas, String nombre, List<Propuesta> propuestas) {
+  public Guardarropas(List<Prenda> prendas, List<Propuesta> propuestas) {
     this.misPrendas = prendas;
-    this.nombre = nombre;
     this.propuestas = propuestas;
   }
 
@@ -38,6 +30,19 @@ public class Guardarropas {
       return null;
     } else {
       return prendas.findFirst().get();
+    }
+  }
+
+  public Sugerencia generarSugerencia(ServicioMeteorologico servicioMeteorologico){
+    Prenda parteSuperior = buscarPrendaValidaDe(Categoria.PARTE_SUPERIOR, servicioMeteorologico);
+    Prenda parteInferior = buscarPrendaValidaDe(Categoria.PARTE_INFERIOR, servicioMeteorologico);
+    Prenda calzado = buscarPrendaValidaDe(Categoria.CALZADO, servicioMeteorologico);
+
+    if(parteSuperior != null && parteInferior != null && calzado != null) {
+      return new Sugerencia(parteSuperior,parteInferior,calzado);
+    }
+    else{
+      return null;
     }
   }
 
@@ -76,9 +81,4 @@ public class Guardarropas {
   public void aceptarPropuesta(Propuesta propuesta) {
     propuesta.aceptarEn(this);
   }
-/*
-  //Iteracion 3
-  public Atuendo generarSugerencia(){
-    return new Atuendo(prendasSuperiores.stream().findFirst(), prendasInferiores.stream().findFirst(), prendasCalzado.stream().findFirst());
-  }*/
 }

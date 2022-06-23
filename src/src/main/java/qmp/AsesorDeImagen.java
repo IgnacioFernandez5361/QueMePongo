@@ -1,6 +1,6 @@
 package qmp;
 
-import qmp.Meteorologia.ServicioMeteorologico;
+import qmp.meteorologia.ServicioMeteorologico;
 import qmp.guardarropas.BorradorSugerencia;
 import qmp.guardarropas.Guardarropas;
 import qmp.guardarropas.Sugerencia;

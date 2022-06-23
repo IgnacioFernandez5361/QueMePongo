@@ -1,6 +1,6 @@
-package qmp.Meteorologia;
+package qmp.meteorologia;
 
-import qmp.Meteorologia.AccuWeatherAPI;
+import qmp.BaseDeUsuarios;
 
 import java.util.*;
 import java.time.*;
@@ -36,10 +36,11 @@ public class ServicioMeteorologico {
     return this.ultimaRespuesta;
   }
 
-  public void actualizarAlertas(){
+  public void actualizarAlertas(BaseDeUsuarios baseDeUsuarios){
     Map<String, List<String>> nuevasAlertas = api.getAlerts(direccion);
     if(!alertas.get("CurrentAlerts").equals(nuevasAlertas.get("CurrentAlerts"))){
       alertas = nuevasAlertas;
+      baseDeUsuarios.actualizarAlertas(consultarAlertasActuales());
     }
   }
 

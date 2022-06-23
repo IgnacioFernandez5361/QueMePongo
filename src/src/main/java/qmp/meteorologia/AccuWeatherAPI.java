@@ -1,4 +1,4 @@
-package qmp.Meteorologia;
+package qmp.meteorologia;
 
 import java.util.*;
 

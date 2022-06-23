@@ -1,6 +1,6 @@
 package qmp.guardarropas;
 
-import qmp.Meteorologia.ServicioMeteorologico;
+import qmp.meteorologia.ServicioMeteorologico;
 import qmp.prenda.Categoria;
 import qmp.prenda.Prenda;
 

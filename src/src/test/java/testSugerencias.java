@@ -32,7 +32,7 @@ public class testSugerencias {
   List<Prenda> misPrendas = new ArrayList<>();
   //Guardarropas guardaropas  = new Guardarropas(new ArrayList<Prenda>(), "uno", new List<Usuario>(), new PropuestaAgregar());
 
-  Guardarropas guardaropas = new Guardarropas(misPrendas, "uno",
+  Guardarropas guardaropas = new Guardarropas(misPrendas,
       new ArrayList<Propuesta>());
   BorradorSugerencia borrador = new BorradorSugerencia(guardaropas);
 

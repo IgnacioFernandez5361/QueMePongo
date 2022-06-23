@@ -2,7 +2,7 @@ package qmp.prenda;
 
 import static java.util.Objects.requireNonNull;
 
-import qmp.Meteorologia.ServicioMeteorologico;
+import qmp.meteorologia.ServicioMeteorologico;
 
 public class Prenda {
   private final Color colorPrimario;
@@ -79,30 +79,6 @@ public class Prenda {
       cantVecesUsado = 0;
     }
   }
-
-
-
-
-  /*
-  public Clima climaHoy() {
-	  if(temperaturaActual() > 20) {
-		  return Clima.CALOR;
-	  }if(temperaturaActual() < 10 ) {
-		  return Clima.FRIO;
-	  }else {
-		  return Clima.NORMAL;
-	  }
-  }*/
-
-  /*Como usuarie de QuéMePongo, quiero poder conocer las condiciones climáticas 
-  de Buenos Aires en un momento dado para obtener sugerencias acordes.
-*/
-
-  /* Dejo estas líneas de abajo comentadas, según creo el ServicioMeteorologico ya las soluciona:
-  AccuWeatherAPI apiClima = new AccuWeatherAPI();
-  List<Map<String, Object>> condicionesClimaticas = apiClima.getWeather("Buenos Aires, Argentina");
-  Map<String, Object> climaActual = condicionesClimaticas.stream().filter() // tiene que devolver los datos de la temperatura de hoy con un filter tal vez
-   */
 
   //PARA TESTS
   public int getCantVecesUsado() {
