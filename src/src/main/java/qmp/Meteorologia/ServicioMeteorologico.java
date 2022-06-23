@@ -1,4 +1,6 @@
-package qmp;
+package qmp.Meteorologia;
+
+import qmp.Meteorologia.AccuWeatherAPI;
 
 import java.util.*;
 import java.time.*;

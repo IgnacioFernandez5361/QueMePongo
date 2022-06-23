@@ -1,15 +1,10 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import qmp.propuesta.Propuesta;
-import qmp.propuesta.PropuestaAgregar;
-import qmp.ServicioMeteorologico;
-import qmp.Usuario;
 import qmp.guardarropas.BorradorSugerencia;
 import qmp.guardarropas.Guardarropas;
-import qmp.guardarropas.Sugerencia;
 import qmp.prenda.*;
 
-import java.time.Duration;
 import java.util.*;
 
 

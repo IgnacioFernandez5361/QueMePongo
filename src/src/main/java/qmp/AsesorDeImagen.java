@@ -1,10 +1,9 @@
 package qmp;
 
+import qmp.Meteorologia.ServicioMeteorologico;
 import qmp.guardarropas.BorradorSugerencia;
 import qmp.guardarropas.Guardarropas;
 import qmp.guardarropas.Sugerencia;
-
-import java.util.List;
 
 public class AsesorDeImagen {
     private ServicioMeteorologico servicioMeteorologico;

@@ -2,12 +2,7 @@ package qmp.prenda;
 
 import static java.util.Objects.requireNonNull;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import qmp.AccuWeatherAPI;
-import qmp.ServicioMeteorologico;
+import qmp.Meteorologia.ServicioMeteorologico;
 
 public class Prenda {
   private final Color colorPrimario;

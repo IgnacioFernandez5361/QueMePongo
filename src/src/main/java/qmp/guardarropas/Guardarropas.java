@@ -2,13 +2,9 @@ package qmp.guardarropas;
 
 import qmp.propuesta.EstadoPropuesta;
 import qmp.propuesta.Propuesta;
-import qmp.propuesta.PropuestaAgregar;
-import qmp.propuesta.PropuestaQuitado;
-import qmp.ServicioMeteorologico;
-import qmp.Usuario;
+import qmp.Meteorologia.ServicioMeteorologico;
 import qmp.prenda.Categoria;
 import qmp.prenda.Prenda;
-
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
